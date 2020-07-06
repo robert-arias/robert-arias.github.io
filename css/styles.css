@@ -1,0 +1,160 @@
+body, html {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  height: 76px;
+  width: 100%;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #f0efff;
+  /*From: https://css-tricks.com/4-ways-to-animate-the-color-of-a-text-link-on-hover/*/
+}
+
+.nav__list {
+  position: fixed;
+  left: 0;
+  top: 76px;
+  background-color: #f0efff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 76px);
+  width: 100%;
+  padding-top: 55px;
+  transform: translateX(101%);
+  overflow: hidden;
+  list-style: none;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  font-size: 1.25em;
+}
+
+.nav__list--open {
+  transform: translateX(0%);
+}
+
+.nav__item {
+  padding: 15px 0;
+}
+
+.nav__link {
+  position: relative;
+  display: inline-block;
+  font-size: 2em;
+  font-weight: 800;
+  color: royalblue;
+  overflow: hidden;
+  background: linear-gradient(to right, midnightblue, midnightblue 50%, royalblue 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+  text-decoration: none;
+}
+
+.nav__link:hover {
+  background-position: 0 100%;
+}
+
+.burger {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all .3s linear;
+}
+
+.burger__line {
+  width: 20px;
+  position: relative;
+  transition: all .1s linear;
+}
+
+.burger__line, .burger__line::before, .burger__line::after {
+  height: 2px;
+  background: royalblue;
+  border-radius: 5px;
+}
+
+.burger__line::before, .burger__line::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  right: 0;
+  transition: all .2s linear;
+}
+
+.burger__line::before {
+  transform: translateY(-8px);
+}
+
+.burger__line::after {
+  transform: translateY(8px);
+}
+
+.burger__line--open {
+  background: transparent;
+}
+
+.burger__line--open::before {
+  transform: rotate(45deg);
+}
+
+.burger__line--open::after {
+  transform: rotate(-45deg);
+}
+
+.landing-page {
+  background-color: #f0efff;
+  min-height: 55vh;
+  position: relative;
+}
+
+.landing-page__title {
+  position: relative;
+  left: 35px;
+  top: 35px;
+  width: 350px;
+  height: 100px;
+  color: royalblue;
+  font-weight: 800;
+  font-size: 40px;
+}
+
+.landing-page__image {
+  position: absolute;
+  bottom: 0;
+  right: 25px;
+  height: 180px;
+}
+
+span {
+  border-right: .05em solid;
+  animation: caret 0.8s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}

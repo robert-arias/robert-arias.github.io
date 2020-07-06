@@ -1,0 +1,171 @@
+
+$background-color: #f0efff;
+$burger-color: royalblue;
+$nav-height: 76px;
+$links-color: royalblue;
+$hover-color: midnightblue;
+$primary-font-color: #000;
+
+body, html {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav {
+    display: flex;
+    height: $nav-height;
+    width: 100%;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: $background-color;
+
+    &__list {
+        position: fixed;
+        left: 0;
+        top: $nav-height;
+        background-color: $background-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: calc(100vh - #{$nav-height});
+        width: 100%;
+        padding-top: 55px;
+        transform: translateX(101%);
+        overflow: hidden;
+        list-style: none;
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
+        font-size: 1.25em;
+
+        &--open {
+            transform: translateX(0%);
+        }
+    }
+
+    &__item {
+        padding: 15px 0;
+    }
+
+    /*From: https://css-tricks.com/4-ways-to-animate-the-color-of-a-text-link-on-hover/*/
+    &__link {
+        position: relative;
+        display: inline-block;
+        font-size: 2em;
+        font-weight: 800;
+        color: $links-color;
+        overflow: hidden;
+        background: linear-gradient(to right, $hover-color, $hover-color 50%, $links-color 50%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% 100%;
+        background-position: 100%;
+        transition: background-position 275ms ease;
+        text-decoration: none; // text decorations are clipped in WebKit browsers
+
+        &:hover {
+          background-position: 0 100%;
+        }
+    }
+}
+
+.burger {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all .3s linear;
+
+    &__line {
+        width: 20px;
+        position: relative;
+        transition: all .1s linear;
+
+        &,
+        &::before,
+        &::after {
+            height: 2px;
+            background: $burger-color;
+            border-radius: 5px;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            right: 0;
+            transition: all .2s linear;
+        }
+
+        &::before {
+            transform: translateY(-8px);
+        }
+
+        &::after {
+            transform: translateY(8px);
+        }
+
+        &--open {
+            background: transparent;
+
+            &::before {
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+
+.landing-page {
+    background-color: $background-color;
+    min-height: 55vh;
+    position: relative;
+
+    &__title {
+        position: relative;
+        left: 35px;
+        top: 35px;
+        width: 350px;
+        height: 100px;
+        color: $links-color;
+        font-weight: 800;
+        font-size: 40px;
+    }
+
+    &__image {
+        position: absolute;
+        bottom: 0;
+        right: 25px;
+        height: 180px;
+    }
+}
+
+span {
+    border-right: .05em solid;
+    animation: caret .8s steps(1) infinite;
+}
+
+@keyframes caret {
+    50% {
+      border-color: transparent;
+    }
+}
