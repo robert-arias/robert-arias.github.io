@@ -55,6 +55,8 @@ body, html {
 .nav__link {
   position: relative;
   display: inline-block;
+  font-size: 2.5em;
+  font-weight: 800;
   color: royalblue;
   overflow: hidden;
   background: linear-gradient(to right, midnightblue, midnightblue 50%, royalblue 50%);
@@ -65,8 +67,6 @@ body, html {
   background-position: 100%;
   transition: background-position 275ms ease;
   text-decoration: none;
-  font-size: 2.5em;
-  font-weight: 800;
 }
 
 .nav__link:hover {
@@ -83,10 +83,25 @@ body, html {
   transition: all .3s linear;
 }
 
+.burger:hover .burger__line,
+.burger:hover .burger__line::before,
+.burger:hover .burger__line::after {
+  background: midnightblue;
+}
+
+.burger:hover .burger__line--open {
+  background: transparent;
+}
+
 .burger__line {
   width: 20px;
   position: relative;
   transition: all .1s linear;
+  /*&:hover,
+        &:hover::before
+        &:hover:after {
+            background: $hover-color;
+        }*/
 }
 
 .burger__line, .burger__line::before, .burger__line::after {
@@ -134,16 +149,15 @@ body, html {
 }
 
 .landing-page__title {
-  width: 350px;
-  height: 100px;
+  min-height: 130px;
   margin-bottom: 80px;
   color: royalblue;
   font-weight: 900;
-  font-size: 2.5em;
+  font-size: 9.66vw;
 }
 
 .landing-page__image {
-  height: 180px;
+  width: 90%;
   margin-bottom: 76px;
 }
 
@@ -159,6 +173,8 @@ body, html {
 .landing-page__link {
   position: relative;
   display: inline-block;
+  font-size: 2.5em;
+  font-weight: 900;
   color: royalblue;
   overflow: hidden;
   background: linear-gradient(to right, midnightblue, midnightblue 50%, royalblue 50%);
@@ -169,12 +185,21 @@ body, html {
   background-position: 100%;
   transition: background-position 275ms ease;
   text-decoration: none;
-  font-size: 2.5em;
-  font-weight: 900;
 }
 
 .landing-page__link:hover {
   background-position: 0 100%;
+}
+
+span {
+  border-right: .05em solid;
+  animation: caret 0.8s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
 }
 
 @media screen and (min-width: 1000px) {
@@ -185,15 +210,15 @@ body, html {
     position: relative;
   }
   .landing-page__title {
-    height: 200px;
     width: 700px;
-    font-size: 5em;
+    padding-top: 25px;
+    font-size: 3.3em;
     margin-right: 30px;
     margin-bottom: 0;
   }
   .landing-page__image {
-    padding-top: 40px;
-    height: 350px;
+    height: auto;
+    width: 66%;
     margin-bottom: 0;
   }
   .landing-page__list {
@@ -205,13 +230,14 @@ body, html {
   }
 }
 
-span {
-  border-right: .05em solid;
-  animation: caret 0.8s steps(1) infinite;
-}
-
-@keyframes caret {
-  50% {
-    border-color: transparent;
+@media screen and (min-width: 1440px) {
+  .landing-page__title {
+    padding-top: 105px;
+    font-size: 5em;
+  }
+  .landing-page__image {
+    padding-top: 40px;
+    height: 350px;
+    width: auto;
   }
 }

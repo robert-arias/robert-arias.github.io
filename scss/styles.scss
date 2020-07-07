@@ -5,9 +5,11 @@ $nav-height: 76px;
 $primary-font-color: royalblue;
 $hover-color: midnightblue;
 
-@mixin links-styles {
+@mixin links-styles($font-size, $font-weight) {
     position: relative;
     display: inline-block;
+    font-size: $font-size;
+    font-weight: $font-weight;
     color: $primary-font-color;
     overflow: hidden;
     background: linear-gradient(to right, $hover-color, $hover-color 50%, $primary-font-color 50%);
@@ -77,9 +79,7 @@ body, html {
 
     /*From: https://css-tricks.com/4-ways-to-animate-the-color-of-a-text-link-on-hover/*/
     &__link {
-        @include links-styles;
-        font-size: 2.5em;
-        font-weight: 800;
+        @include links-styles(2.5em, 800);
     }
 }
 
@@ -91,6 +91,16 @@ body, html {
     height: 40px;
     cursor: pointer;
     transition: all .3s linear;
+
+    &:hover &__line,
+    &:hover &__line::before,
+    &:hover &__line::after {
+        background: $hover-color;
+    }
+
+    &:hover &__line--open {
+        background: transparent;
+    }
 
     &__line {
         width: 20px;
@@ -118,6 +128,12 @@ body, html {
         &::before {
             transform: translateY(-8px);
         }
+
+        /*&:hover,
+        &:hover::before
+        &:hover:after {
+            background: $hover-color;
+        }*/
 
         &::after {
             transform: translateY(8px);
@@ -147,16 +163,15 @@ body, html {
 
 
     &__title {
-        width: 350px;
-        height: 100px;
+        min-height: 130px;
         margin-bottom: 80px;
         color: $primary-font-color;
         font-weight: 900;
-        font-size: 2.5em;
+        font-size: 9.66vw;
     }
 
     &__image {
-        height: 180px;
+        width: 90%;
         margin-bottom: $nav-height;
     }
 
@@ -172,9 +187,18 @@ body, html {
     }
 
     &__link {
-        @include links-styles;
-        font-size: 2.5em;
-        font-weight: 900;
+        @include links-styles(2.5em, 900);
+    }
+}
+
+span {
+    border-right: .05em solid;
+    animation: caret .8s steps(1) infinite;
+}
+
+@keyframes caret {
+    50% {
+      border-color: transparent;
     }
 }
 
@@ -186,16 +210,16 @@ body, html {
         position: relative;
 
         &__title {
-            height: 200px;
             width: 700px;
-            font-size: 5em;
+            padding-top: 25px;
+            font-size: 3.3em;
             margin-right: 30px;
             margin-bottom: 0;
         }
 
         &__image {
-            padding-top: 40px;
-            height: 350px;
+            height: auto;
+            width: 66%;
             margin-bottom: 0;
         }
 
@@ -212,13 +236,17 @@ body, html {
     }
 }
 
-span {
-    border-right: .05em solid;
-    animation: caret .8s steps(1) infinite;
-}
+@media screen and (min-width: 1440px) {
+    .landing-page {
+        &__title {
+            padding-top: 105px;
+            font-size: 5em;
+        }
 
-@keyframes caret {
-    50% {
-      border-color: transparent;
+        &__image {
+            padding-top: 40px;
+            height: 350px;
+            width: auto;
+        }
     }
 }
