@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 body, html {
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
@@ -41,7 +42,6 @@ body, html {
   list-style: none;
   font-weight: 500;
   transition: all 0.2s ease-in-out;
-  font-size: 1.25em;
 }
 
 .nav__list--open {
@@ -55,8 +55,6 @@ body, html {
 .nav__link {
   position: relative;
   display: inline-block;
-  font-size: 2em;
-  font-weight: 800;
   color: royalblue;
   overflow: hidden;
   background: linear-gradient(to right, midnightblue, midnightblue 50%, royalblue 50%);
@@ -67,6 +65,8 @@ body, html {
   background-position: 100%;
   transition: background-position 275ms ease;
   text-decoration: none;
+  font-size: 2.5em;
+  font-weight: 800;
 }
 
 .nav__link:hover {
@@ -126,26 +126,83 @@ body, html {
 
 .landing-page {
   background-color: #f0efff;
-  min-height: 55vh;
-  position: relative;
+  height: calc(100vh - 76px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
 }
 
 .landing-page__title {
-  position: relative;
-  left: 35px;
-  top: 35px;
   width: 350px;
   height: 100px;
+  margin-bottom: 80px;
   color: royalblue;
-  font-weight: 800;
-  font-size: 40px;
+  font-weight: 900;
+  font-size: 2.5em;
 }
 
 .landing-page__image {
-  position: absolute;
-  bottom: 0;
-  right: 25px;
   height: 180px;
+  margin-bottom: 76px;
+}
+
+.landing-page__list {
+  display: flex;
+  list-style: none;
+}
+
+.landing-page__item:not(:last-child) {
+  margin-right: 15px;
+}
+
+.landing-page__link {
+  position: relative;
+  display: inline-block;
+  color: royalblue;
+  overflow: hidden;
+  background: linear-gradient(to right, midnightblue, midnightblue 50%, royalblue 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+  text-decoration: none;
+  font-size: 2.5em;
+  font-weight: 900;
+}
+
+.landing-page__link:hover {
+  background-position: 0 100%;
+}
+
+@media screen and (min-width: 1000px) {
+  .landing-page {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0 70px 150px 70px;
+    position: relative;
+  }
+  .landing-page__title {
+    height: 200px;
+    width: 700px;
+    font-size: 5em;
+    margin-right: 30px;
+    margin-bottom: 0;
+  }
+  .landing-page__image {
+    padding-top: 40px;
+    height: 350px;
+    margin-bottom: 0;
+  }
+  .landing-page__list {
+    position: absolute;
+    bottom: 25px;
+  }
+  .landing-page__item:not(:last-child) {
+    margin-right: 25px;
+  }
 }
 
 span {

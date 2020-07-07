@@ -1,10 +1,28 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 $background-color: #f0efff;
 $burger-color: royalblue;
 $nav-height: 76px;
-$links-color: royalblue;
+$primary-font-color: royalblue;
 $hover-color: midnightblue;
-$primary-font-color: #000;
+
+@mixin links-styles {
+    position: relative;
+    display: inline-block;
+    color: $primary-font-color;
+    overflow: hidden;
+    background: linear-gradient(to right, $hover-color, $hover-color 50%, $primary-font-color 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
+    text-decoration: none; // text decorations are clipped in WebKit browsers
+
+    &:hover {
+        background-position: 0 100%;
+    }
+}
 
 body, html {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
@@ -47,7 +65,6 @@ body, html {
         list-style: none;
         font-weight: 500;
         transition: all 0.2s ease-in-out;
-        font-size: 1.25em;
 
         &--open {
             transform: translateX(0%);
@@ -60,24 +77,9 @@ body, html {
 
     /*From: https://css-tricks.com/4-ways-to-animate-the-color-of-a-text-link-on-hover/*/
     &__link {
-        position: relative;
-        display: inline-block;
-        font-size: 2em;
+        @include links-styles;
+        font-size: 2.5em;
         font-weight: 800;
-        color: $links-color;
-        overflow: hidden;
-        background: linear-gradient(to right, $hover-color, $hover-color 50%, $links-color 50%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 200% 100%;
-        background-position: 100%;
-        transition: background-position 275ms ease;
-        text-decoration: none; // text decorations are clipped in WebKit browsers
-
-        &:hover {
-          background-position: 0 100%;
-        }
     }
 }
 
@@ -137,25 +139,76 @@ body, html {
 
 .landing-page {
     background-color: $background-color;
-    min-height: 55vh;
-    position: relative;
+    height: calc(100vh - #{$nav-height});
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+
 
     &__title {
-        position: relative;
-        left: 35px;
-        top: 35px;
         width: 350px;
         height: 100px;
-        color: $links-color;
-        font-weight: 800;
-        font-size: 40px;
+        margin-bottom: 80px;
+        color: $primary-font-color;
+        font-weight: 900;
+        font-size: 2.5em;
     }
 
     &__image {
-        position: absolute;
-        bottom: 0;
-        right: 25px;
         height: 180px;
+        margin-bottom: $nav-height;
+    }
+
+    &__list {
+        display: flex;
+        list-style: none;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+    }
+
+    &__link {
+        @include links-styles;
+        font-size: 2.5em;
+        font-weight: 900;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .landing-page {
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 0 70px 150px 70px;
+        position: relative;
+
+        &__title {
+            height: 200px;
+            width: 700px;
+            font-size: 5em;
+            margin-right: 30px;
+            margin-bottom: 0;
+        }
+
+        &__image {
+            padding-top: 40px;
+            height: 350px;
+            margin-bottom: 0;
+        }
+
+        &__list {
+            position: absolute;
+            bottom: 25px;
+        }
+
+        &__item {
+            &:not(:last-child) {
+                margin-right: 25px;
+            }
+        }
     }
 }
 
