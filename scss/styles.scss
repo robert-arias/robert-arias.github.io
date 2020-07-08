@@ -170,12 +170,6 @@ body, html {
             transform: translateY(-8px);
         }
 
-        /*&:hover,
-        &:hover::before
-        &:hover:after {
-            background: $hover-color;
-        }*/
-
         &::after {
             transform: translateY(8px);
         }
@@ -275,7 +269,55 @@ body, html {
     }
 
     &-skills {
+        margin-bottom: 35px;
         @include about-info;
+
+        &__icon {
+            color: $primary-font-color;
+            margin-right: 10px;
+        }
+
+        &__item {
+            margin-bottom: 35px;
+        }
+    }
+
+    &-buttons {
+        display: flex;
+        flex-direction: column;
+
+        &__hire,
+        &__cv {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: .15em;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 3px solid $primary-font-color;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        &__hire {
+            color: $primary-font-color;
+            &:hover {
+                color: white;
+                background-color: $primary-font-color;
+            }
+        }
+
+        &__cv {
+            color: white;
+            background-color: $primary-font-color;
+            &:hover {
+                border-color: rgba($primary-font-color, .5);
+                background-color: rgba($primary-font-color, .8);
+            }
+        }
     }
 }
 
@@ -290,6 +332,23 @@ body, html {
     }
 }
 
+@media screen and (min-width: 800px) {
+    .landing-page {
+        &__title {
+            font-size: 7vw;
+            height: 172px;
+        }
+
+        &__image {
+            width: 75%;
+        }
+    }
+
+    .about {
+        width: 75%;
+    }
+}
+
 @media screen and (min-width: 1000px) {
     .landing-page {
         flex-direction: row;
@@ -298,6 +357,7 @@ body, html {
         position: relative;
 
         &__title {
+            height: 184px;
             width: 700px;
             padding-top: 25px;
             font-size: 3.3em;
@@ -322,11 +382,78 @@ body, html {
             }
         }
     }
+
+    .about {
+        width: 75%;
+
+        &__title {
+
+            &--mini {
+                font-size: 1.2em;
+            }
+
+            &--big {
+                font-size: 2em;
+            }
+        }
+
+        &__paragraph {
+            font-size: 18px;
+        }
+
+        &-info {
+            width: 100%;
+            flex-direction: row;
+        }
+
+        &-profile,
+        &-skills {
+            width: 50%;
+
+            &__title {
+                position: relative;
+                text-align: left;
+                font-size: 20px;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    background-color: $primary-font-color;
+                    height: 2px;
+                    width: 35px;
+                }
+            }
+
+            &__paragraph {
+                font-size: 18px;
+            }
+        }
+
+        &-profile {
+            margin-right: 35px;
+        }
+
+        &-buttons {
+            flex-direction: row;
+
+            &__hire,
+            &__cv {
+                width: 50%;
+            }
+
+            &__hire {
+                margin-right: 20px;
+            }
+        }
+    }
 }
 
 @media screen and (min-width: 1440px) {
     .landing-page {
         &__title {
+            height: 345px;
             padding-top: 105px;
             font-size: 5em;
         }
@@ -336,5 +463,9 @@ body, html {
             height: 350px;
             width: auto;
         }
+    }
+
+    .about {
+        width: 55%;
     }
 }

@@ -1,7 +1,12 @@
-$('.burger').click(function(){
+$('.burger').click(() => {
     $('.burger__line').toggleClass("burger__line--open");
     $(".nav__list").toggleClass("nav__list--open");
 });
+
+$('.nav__link').click(() => {
+  $('.burger__line').toggleClass("burger__line--open");
+  $(".nav__list").toggleClass("nav__list--open");
+})
 
 //from: https://codepen.io/Danielgroen/pen/VeRPOq
 document.addEventListener('DOMContentLoaded',function(event){

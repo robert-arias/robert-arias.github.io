@@ -98,11 +98,6 @@ body, html {
   width: 20px;
   position: relative;
   transition: all .1s linear;
-  /*&:hover,
-        &:hover::before
-        &:hover:after {
-            background: $hover-color;
-        }*/
 }
 
 .burger__line, .burger__line::before, .burger__line::after {
@@ -273,6 +268,10 @@ body, html {
   font-weight: 300;
 }
 
+.about-skills {
+  margin-bottom: 35px;
+}
+
 .about-skills__title {
   font-size: 18px;
   text-transform: uppercase;
@@ -306,6 +305,54 @@ body, html {
   letter-spacing: 2px;
 }
 
+.about-skills__icon {
+  color: royalblue;
+  margin-right: 10px;
+}
+
+.about-skills__item {
+  margin-bottom: 35px;
+}
+
+.about-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-buttons__hire, .about-buttons__cv {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: .15em;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 3px solid royalblue;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.about-buttons__hire {
+  color: royalblue;
+}
+
+.about-buttons__hire:hover {
+  color: white;
+  background-color: royalblue;
+}
+
+.about-buttons__cv {
+  color: white;
+  background-color: royalblue;
+}
+
+.about-buttons__cv:hover {
+  border-color: rgba(65, 105, 225, 0.5);
+  background-color: rgba(65, 105, 225, 0.8);
+}
+
 .ticking {
   border-right: .05em solid;
   animation: caret 0.8s steps(1) infinite;
@@ -317,6 +364,19 @@ body, html {
   }
 }
 
+@media screen and (min-width: 800px) {
+  .landing-page__title {
+    font-size: 7vw;
+    height: 172px;
+  }
+  .landing-page__image {
+    width: 75%;
+  }
+  .about {
+    width: 75%;
+  }
+}
+
 @media screen and (min-width: 1000px) {
   .landing-page {
     flex-direction: row;
@@ -325,6 +385,7 @@ body, html {
     position: relative;
   }
   .landing-page__title {
+    height: 184px;
     width: 700px;
     padding-top: 25px;
     font-size: 3.3em;
@@ -343,10 +404,59 @@ body, html {
   .landing-page__item:not(:last-child) {
     margin-right: 25px;
   }
+  .about {
+    width: 75%;
+  }
+  .about__title--mini {
+    font-size: 1.2em;
+  }
+  .about__title--big {
+    font-size: 2em;
+  }
+  .about__paragraph {
+    font-size: 18px;
+  }
+  .about-info {
+    width: 100%;
+    flex-direction: row;
+  }
+  .about-profile, .about-skills {
+    width: 50%;
+  }
+  .about-profile__title, .about-skills__title {
+    position: relative;
+    text-align: left;
+    font-size: 20px;
+  }
+  .about-profile__title::after, .about-skills__title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: royalblue;
+    height: 2px;
+    width: 35px;
+  }
+  .about-profile__paragraph, .about-skills__paragraph {
+    font-size: 18px;
+  }
+  .about-profile {
+    margin-right: 35px;
+  }
+  .about-buttons {
+    flex-direction: row;
+  }
+  .about-buttons__hire, .about-buttons__cv {
+    width: 50%;
+  }
+  .about-buttons__hire {
+    margin-right: 20px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .landing-page__title {
+    height: 345px;
     padding-top: 105px;
     font-size: 5em;
   }
@@ -354,5 +464,8 @@ body, html {
     padding-top: 40px;
     height: 350px;
     width: auto;
+  }
+  .about {
+    width: 55%;
   }
 }
