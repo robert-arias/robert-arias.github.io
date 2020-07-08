@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
 $background-color: #f0efff;
 $burger-color: royalblue;
 $nav-height: 76px;
 $primary-font-color: royalblue;
+$paragraph-color: gray;
 $hover-color: midnightblue;
 
 @mixin links-styles($font-size, $font-weight) {
@@ -23,6 +25,45 @@ $hover-color: midnightblue;
 
     &:hover {
         background-position: 0 100%;
+    }
+}
+
+@mixin paragraph {
+    font-weight: 300;
+    font-size: 16px;
+    color: $paragraph-color;
+    hyphens: auto;
+    word-wrap: break-word;
+    line-height: 25px;
+    margin-bottom: 25px;
+}
+
+@mixin about-info {
+    &__title {
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: .15em;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    &__paragraph {
+        @include paragraph;
+    }
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+        margin-bottom: 20px;
+        line-height: 18px;
+    }
+
+    &__strong {
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
     }
 }
 
@@ -191,7 +232,54 @@ body, html {
     }
 }
 
-span {
+.about {
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 8rem;
+    padding-bottom: 10rem;
+
+    &__title {
+        text-align: center;
+
+        &--mini {
+            font-size: .9em;
+            text-transform: uppercase;
+            letter-spacing: .3em;
+            color: $primary-font-color;
+        }
+
+        &--big {
+            font-size: 1.7em;
+            margin-bottom: 25px;
+        }
+    }
+
+    &__paragraph {
+        @include paragraph;
+    }
+
+    &-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-profile {
+        @include about-info;
+        margin-bottom: 35px;
+
+        &__span {
+            display: block;
+            color: $paragraph-color;
+            font-weight: 300;
+        }
+    }
+
+    &-skills {
+        @include about-info;
+    }
+}
+
+.ticking {
     border-right: .05em solid;
     animation: caret .8s steps(1) infinite;
 }

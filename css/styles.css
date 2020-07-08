@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap");
 body, html {
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
@@ -191,7 +192,121 @@ body, html {
   background-position: 0 100%;
 }
 
-span {
+.about {
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 8rem;
+  padding-bottom: 10rem;
+}
+
+.about__title {
+  text-align: center;
+}
+
+.about__title--mini {
+  font-size: .9em;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  color: royalblue;
+}
+
+.about__title--big {
+  font-size: 1.7em;
+  margin-bottom: 25px;
+}
+
+.about__paragraph {
+  font-weight: 300;
+  font-size: 16px;
+  color: gray;
+  hyphens: auto;
+  word-wrap: break-word;
+  line-height: 25px;
+  margin-bottom: 25px;
+}
+
+.about-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-profile {
+  margin-bottom: 35px;
+}
+
+.about-profile__title {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.about-profile__paragraph {
+  font-weight: 300;
+  font-size: 16px;
+  color: gray;
+  hyphens: auto;
+  word-wrap: break-word;
+  line-height: 25px;
+  margin-bottom: 25px;
+}
+
+.about-profile__list {
+  list-style: none;
+}
+
+.about-profile__item {
+  margin-bottom: 20px;
+  line-height: 18px;
+}
+
+.about-profile__strong {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.about-profile__span {
+  display: block;
+  color: gray;
+  font-weight: 300;
+}
+
+.about-skills__title {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.about-skills__paragraph {
+  font-weight: 300;
+  font-size: 16px;
+  color: gray;
+  hyphens: auto;
+  word-wrap: break-word;
+  line-height: 25px;
+  margin-bottom: 25px;
+}
+
+.about-skills__list {
+  list-style: none;
+}
+
+.about-skills__item {
+  margin-bottom: 20px;
+  line-height: 18px;
+}
+
+.about-skills__strong {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.ticking {
   border-right: .05em solid;
   animation: caret 0.8s steps(1) infinite;
 }
