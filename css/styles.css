@@ -191,7 +191,7 @@ body, html {
   width: 85%;
   margin: 0 auto;
   padding-top: 8rem;
-  padding-bottom: 10rem;
+  padding-bottom: 8rem;
 }
 
 .about__title {
@@ -225,19 +225,25 @@ body, html {
   flex-direction: column;
 }
 
-.about-profile {
-  margin-bottom: 35px;
-}
-
-.about-profile__title {
+.about-profile__title, .about-skills__title {
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: .15em;
   text-align: center;
   margin-bottom: 15px;
+  position: relative;
 }
 
-.about-profile__paragraph {
+.about-profile__title::after, .about-skills__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  background-color: royalblue;
+  height: 2px;
+  width: 35px;
+}
+
+.about-profile__paragraph, .about-skills__paragraph {
   font-weight: 300;
   font-size: 16px;
   color: gray;
@@ -247,19 +253,27 @@ body, html {
   margin-bottom: 25px;
 }
 
-.about-profile__list {
+.about-profile__list, .about-skills__list {
   list-style: none;
 }
 
-.about-profile__item {
+.about-profile__item, .about-skills__item {
   margin-bottom: 20px;
   line-height: 18px;
 }
 
-.about-profile__strong {
+.about-profile__strong, .about-skills__strong {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+
+.about-profile {
+  margin-bottom: 35px;
+}
+
+.about-profile__title::after {
+  left: calc(50% - 44.525px);
 }
 
 .about-profile__span {
@@ -272,37 +286,8 @@ body, html {
   margin-bottom: 35px;
 }
 
-.about-skills__title {
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: .15em;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.about-skills__paragraph {
-  font-weight: 300;
-  font-size: 16px;
-  color: gray;
-  hyphens: auto;
-  word-wrap: break-word;
-  line-height: 25px;
-  margin-bottom: 25px;
-}
-
-.about-skills__list {
-  list-style: none;
-}
-
-.about-skills__item {
-  margin-bottom: 20px;
-  line-height: 18px;
-}
-
-.about-skills__strong {
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+.about-skills__title::after {
+  left: calc(50% - 36.36px);
 }
 
 .about-skills__icon {
@@ -353,6 +338,156 @@ body, html {
   background-color: rgba(65, 105, 225, 0.8);
 }
 
+.resumecontainer {
+  width: 100%;
+  background-color: #f0efff;
+}
+
+.resume {
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  position: relative;
+}
+
+.resume__title {
+  text-align: center;
+}
+
+.resume__title--mini {
+  font-size: .9em;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  color: royalblue;
+}
+
+.resume__title--big {
+  font-size: 1.7em;
+  margin-bottom: 25px;
+}
+
+.resume__paragraph {
+  font-weight: 300;
+  font-size: 16px;
+  color: #686666;
+  hyphens: auto;
+  word-wrap: break-word;
+  line-height: 25px;
+  margin-bottom: 25px;
+}
+
+.education {
+  width: 100%;
+}
+
+.education__title {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  text-align: center;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.education__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 65px);
+  background-color: royalblue;
+  height: 2px;
+  width: 35px;
+}
+
+.education-timeline {
+  position: relative;
+}
+
+.education-timeline::before {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 10%;
+}
+
+.education-information {
+  position: relative;
+}
+
+.education-information__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  background: #313131;
+  border-radius: 50%;
+  color: white;
+  position: absolute;
+  top: 15px;
+  left: calc(10% - 20px);
+  /*half of icon width*/
+}
+
+.education-information__header {
+  padding-top: 15px;
+  margin-left: 20%;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.education-information__header::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  height: 3px;
+  width: 35px;
+  border-radius: 10px;
+  background: rgba(104, 102, 102, 0.5);
+}
+
+.education-information__school {
+  font-size: 18px;
+}
+
+.education-information__time {
+  font-size: 14px;
+  color: #686666;
+}
+
+.education-information__content {
+  margin-left: 20%;
+  padding-bottom: 15px;
+}
+
+.education-information__major {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.education-information__description {
+  font-size: 14px;
+  font-weight: 300;
+  color: #686666;
+}
+
+.education-information__link {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 2px solid royalblue;
+  transition: all .2s linear;
+}
+
+.education-information__link:hover {
+  color: royalblue;
+}
+
 .ticking {
   border-right: .05em solid;
   animation: caret 0.8s steps(1) infinite;
@@ -373,6 +508,9 @@ body, html {
     width: 75%;
   }
   .about {
+    width: 75%;
+  }
+  .resume {
     width: 75%;
   }
 }
@@ -404,9 +542,6 @@ body, html {
   .landing-page__item:not(:last-child) {
     margin-right: 25px;
   }
-  .about {
-    width: 75%;
-  }
   .about__title--mini {
     font-size: 1.2em;
   }
@@ -424,18 +559,11 @@ body, html {
     width: 50%;
   }
   .about-profile__title, .about-skills__title {
-    position: relative;
     text-align: left;
     font-size: 20px;
   }
   .about-profile__title::after, .about-skills__title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
     left: 0;
-    background-color: royalblue;
-    height: 2px;
-    width: 35px;
   }
   .about-profile__paragraph, .about-skills__paragraph {
     font-size: 18px;
@@ -452,6 +580,36 @@ body, html {
   .about-buttons__hire {
     margin-right: 20px;
   }
+  .resume__title--mini {
+    font-size: 1.2em;
+  }
+  .resume__title--big {
+    font-size: 2em;
+  }
+  .resume__paragraph {
+    font-size: 18px;
+  }
+  .education__title {
+    font-size: 20px;
+  }
+  .education__title::after {
+    left: calc(50% - 72.075px);
+  }
+  .education-information__icon {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    left: calc(10% - 25px);
+  }
+  .education-information__school {
+    font-size: 20px;
+  }
+  .education-information__major {
+    font-size: 18px;
+  }
+  .education-information__description {
+    font-size: 16px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -466,6 +624,9 @@ body, html {
     width: auto;
   }
   .about {
+    width: 55%;
+  }
+  .resume {
     width: 55%;
   }
 }

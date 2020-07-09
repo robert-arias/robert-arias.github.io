@@ -4,7 +4,8 @@ $background-color: #f0efff;
 $burger-color: royalblue;
 $nav-height: 76px;
 $primary-font-color: royalblue;
-$paragraph-color: gray;
+$primary-paragraph-color: gray;
+$secondary-paragraph-color: #686666;
 $hover-color: midnightblue;
 
 @mixin links-styles($font-size, $font-weight) {
@@ -28,43 +29,14 @@ $hover-color: midnightblue;
     }
 }
 
-@mixin paragraph {
+@mixin paragraph($font-color) {
     font-weight: 300;
     font-size: 16px;
-    color: $paragraph-color;
+    color: $font-color;
     hyphens: auto;
     word-wrap: break-word;
     line-height: 25px;
     margin-bottom: 25px;
-}
-
-@mixin about-info {
-    &__title {
-        font-size: 18px;
-        text-transform: uppercase;
-        letter-spacing: .15em;
-        text-align: center;
-        margin-bottom: 15px;
-    }
-
-    &__paragraph {
-        @include paragraph;
-    }
-
-    &__list {
-        list-style: none;
-    }
-
-    &__item {
-        margin-bottom: 20px;
-        line-height: 18px;
-    }
-
-    &__strong {
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
 }
 
 body, html {
@@ -230,7 +202,7 @@ body, html {
     width: 85%;
     margin: 0 auto;
     padding-top: 8rem;
-    padding-bottom: 10rem;
+    padding-bottom: 8rem;
 
     &__title {
         text-align: center;
@@ -249,7 +221,7 @@ body, html {
     }
 
     &__paragraph {
-        @include paragraph;
+        @include paragraph($primary-paragraph-color);
     }
 
     &-info {
@@ -257,20 +229,67 @@ body, html {
         flex-direction: column;
     }
 
+    &-profile,
+    &-skills {
+        &__title {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: .15em;
+            text-align: center;
+            margin-bottom: 15px;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                background-color: $primary-font-color;
+                height: 2px;
+                width: 35px;
+            }
+        }
+
+        &__paragraph {
+            @include paragraph($primary-paragraph-color);
+        }
+    
+        &__list {
+            list-style: none;
+        }
+    
+        &__item {
+            margin-bottom: 20px;
+            line-height: 18px;
+        }
+    
+        &__strong {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    }
+
     &-profile {
-        @include about-info;
         margin-bottom: 35px;
+
+        &__title::after {
+            left: calc(50% - 44.525px);
+        }
+
 
         &__span {
             display: block;
-            color: $paragraph-color;
+            color: $primary-paragraph-color;
             font-weight: 300;
         }
     }
 
     &-skills {
         margin-bottom: 35px;
-        @include about-info;
+
+        &__title::after {
+            left: calc(50% - 36.36px);
+        }
 
         &__icon {
             color: $primary-font-color;
@@ -321,6 +340,149 @@ body, html {
     }
 }
 
+.resumecontainer {
+    width: 100%;
+    background-color: $background-color;
+}
+
+.resume {
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    position: relative;
+
+    &__title {
+        text-align: center;
+
+        &--mini {
+            font-size: .9em;
+            text-transform: uppercase;
+            letter-spacing: .3em;
+            color: $primary-font-color;
+        }
+
+        &--big {
+            font-size: 1.7em;
+            margin-bottom: 25px;
+        }
+    }
+
+    &__paragraph {
+        @include paragraph($secondary-paragraph-color);
+    }
+}
+
+.education {
+    width: 100%;
+
+    &__title {
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: .15em;
+        text-align: center;
+        margin-bottom: 15px;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: calc(50% - 65px);
+            background-color: $primary-font-color;
+            height: 2px;
+            width: 35px;
+        }
+    }
+
+    &-timeline {
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 100%;
+            background: rgba($color: #000000, $alpha: .3);
+            position: absolute;
+            top: 0;
+            left: 10%;
+        }
+    }
+
+    &-information {
+        position: relative;
+
+        &__icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            width: 40px;
+            background: #313131;
+            border-radius: 50%;
+            color: white;
+            position: absolute;
+            top: 15px;
+            left: calc(10% - 20px); /*half of icon width*/
+        }
+
+        &__header {
+            padding-top: 15px;
+            margin-left: 20%;
+            margin-bottom: 25px;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -10px;
+                height: 3px;
+                width: 35px;
+                border-radius: 10px;
+                background: rgba($secondary-paragraph-color, $alpha: .5);
+            }
+        }
+
+        &__school {
+            font-size: 18px;
+        }
+
+        &__time {
+            font-size: 14px;
+            color: $secondary-paragraph-color;
+        }
+
+        &__content {
+            margin-left: 20%;
+            padding-bottom: 15px;
+        }
+
+        &__major {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        &__description {
+            font-size: 14px;
+            font-weight: 300;
+            color: $secondary-paragraph-color;
+        }
+
+        &__link {
+            text-decoration: none;
+            color: inherit;
+            border-bottom: 2px solid $primary-font-color;
+            transition: all .2s linear;
+
+            &:hover {
+                color: $primary-font-color
+            }
+        }
+    }
+}
+
 .ticking {
     border-right: .05em solid;
     animation: caret .8s steps(1) infinite;
@@ -345,6 +507,10 @@ body, html {
     }
 
     .about {
+        width: 75%;
+    }
+
+    .resume {
         width: 75%;
     }
 }
@@ -384,10 +550,7 @@ body, html {
     }
 
     .about {
-        width: 75%;
-
         &__title {
-
             &--mini {
                 font-size: 1.2em;
             }
@@ -411,18 +574,11 @@ body, html {
             width: 50%;
 
             &__title {
-                position: relative;
                 text-align: left;
                 font-size: 20px;
 
                 &::after {
-                    content: '';
-                    position: absolute;
-                    bottom: 0;
                     left: 0;
-                    background-color: $primary-font-color;
-                    height: 2px;
-                    width: 35px;
                 }
             }
 
@@ -448,6 +604,53 @@ body, html {
             }
         }
     }
+
+    .resume {
+        &__title {
+            &--mini {
+                font-size: 1.2em;
+            }
+
+            &--big {
+                font-size: 2em;
+            }
+        }
+
+        &__paragraph {
+            font-size: 18px;
+        }
+    }
+
+    .education {
+        &__title {
+            font-size: 20px;
+
+            &::after {
+                left: calc(50% - 72.075px);
+            }
+        }
+
+        &-information {
+            &__icon {
+                width: 50px;
+                height: 50px;
+                font-size: 18px;
+                left: calc(10% - 25px);
+            }
+
+            &__school {
+                font-size: 20px;
+            }
+
+            &__major {
+                font-size: 18px;
+            }
+
+            &__description {
+                font-size: 16px;
+            }
+        }
+    }
 }
 
 @media screen and (min-width: 1440px) {
@@ -466,6 +669,10 @@ body, html {
     }
 
     .about {
+        width: 55%;
+    }
+
+    .resume {
         width: 55%;
     }
 }
