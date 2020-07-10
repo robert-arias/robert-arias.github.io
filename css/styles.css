@@ -379,6 +379,7 @@ body, html {
 
 .education {
   width: 100%;
+  margin-bottom: 25px;
 }
 
 .education__title {
@@ -488,6 +489,65 @@ body, html {
   color: royalblue;
 }
 
+.skills__title {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  text-align: center;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.skills__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 36.36px);
+  background-color: royalblue;
+  height: 2px;
+  width: 35px;
+}
+
+.skills-information-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-information {
+  margin-bottom: 20px;
+}
+
+.skills-information__title {
+  font-size: 18px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.skills-information__list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.skills-information__item {
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 300;
+  color: #686666;
+  text-align: center;
+}
+
+.skills-information__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.skills-information__icon {
+  color: royalblue;
+  margin-right: 3px;
+}
+
 .ticking {
   border-right: .05em solid;
   animation: caret 0.8s steps(1) infinite;
@@ -512,6 +572,14 @@ body, html {
   }
   .resume {
     width: 75%;
+  }
+  .skills-information-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .skills-information {
+    width: 50%;
+    flex-shrink: 0;
   }
 }
 
@@ -608,6 +676,15 @@ body, html {
     font-size: 18px;
   }
   .education-information__description {
+    font-size: 16px;
+  }
+  .skills__title {
+    font-size: 20px;
+  }
+  .skills-information__title {
+    font-size: 20px;
+  }
+  .skills-information__item {
     font-size: 16px;
   }
 }

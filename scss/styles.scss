@@ -375,6 +375,7 @@ body, html {
 
 .education {
     width: 100%;
+    margin-bottom: 25px;
 
     &__title {
         font-size: 18px;
@@ -483,6 +484,67 @@ body, html {
     }
 }
 
+.skills {
+    &__title {
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: .15em;
+        text-align: center;
+        margin-bottom: 15px;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: calc(50% - 36.36px);
+            background-color: $primary-font-color;
+            height: 2px;
+            width: 35px;
+        }
+    }
+
+    &-information-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-information {
+        margin-bottom: 20px;
+
+        &__title {
+            font-size: 18px;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        &__list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            flex-shrink: 0;
+            font-size: 14px;
+            font-weight: 300;
+            color: $secondary-paragraph-color;
+            text-align: center;
+
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+
+        &__icon {
+            color: $primary-font-color;
+            margin-right: 3px;
+        }
+    }
+}
+
 .ticking {
     border-right: .05em solid;
     animation: caret .8s steps(1) infinite;
@@ -512,6 +574,18 @@ body, html {
 
     .resume {
         width: 75%;
+    }
+
+    .skills {
+        &-information-container {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        &-information {
+            width: 50%;
+            flex-shrink: 0;
+        }
     }
 }
 
@@ -647,6 +721,22 @@ body, html {
             }
 
             &__description {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .skills {
+        &__title {
+            font-size: 20px;
+        }
+
+        &-information {
+            &__title {
+                font-size: 20px;
+            }
+
+            &__item {
                 font-size: 16px;
             }
         }
