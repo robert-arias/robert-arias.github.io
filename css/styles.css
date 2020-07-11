@@ -146,7 +146,7 @@ body, html {
 
 .landing-page__title {
   min-height: 130px;
-  margin-bottom: 80px;
+  margin-bottom: 65px;
   color: royalblue;
   font-weight: 900;
   font-size: 9.66vw;
@@ -510,8 +510,11 @@ body, html {
 
 .resume-skills-information-container {
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: 'skills-1 skills-1 skills-1' 'skills-2 skills-2 skills-2' 'skills-3 skills-3 skills-3' 'skills-4 skills-4 skills-4' 'skills-5 skills-5 skills-5' 'skills-6 skills-6 skills-6';
 }
 
 .resume-skills-information {
@@ -532,7 +535,6 @@ body, html {
 }
 
 .resume-skills-information__item {
-  flex-shrink: 0;
   font-size: 14px;
   font-weight: 300;
   color: #686666;
@@ -546,6 +548,30 @@ body, html {
 .resume-skills-information__icon {
   color: royalblue;
   margin-right: 3px;
+}
+
+.resume-skills-information--1 {
+  grid-area: skills-1;
+}
+
+.resume-skills-information--2 {
+  grid-area: skills-2;
+}
+
+.resume-skills-information--3 {
+  grid-area: skills-3;
+}
+
+.resume-skills-information--4 {
+  grid-area: skills-4;
+}
+
+.resume-skills-information--5 {
+  grid-area: skills-5;
+}
+
+.resume-skills-information--6 {
+  grid-area: skills-6;
 }
 
 .projects {
@@ -696,7 +722,8 @@ body, html {
     height: 172px;
   }
   .landing-page__image {
-    width: 75%;
+    width: 65%;
+    margin-bottom: 40px;
   }
   .about {
     width: 75%;
@@ -705,12 +732,19 @@ body, html {
     width: 75%;
   }
   .resume-skills-information-container {
-    flex-direction: row;
-    flex-wrap: wrap;
+    grid-template-areas: 'skills-1 skills-1 skills-2' 'skills-3 skills-3 skills-4' 'skills-5 skills-5 skills-6';
   }
-  .resume-skills-information {
-    width: 50%;
-    flex-shrink: 0;
+  .resume-skills-information__title {
+    text-align: left;
+  }
+  .resume-skills-information__list {
+    display: block;
+  }
+  .resume-skills-information__item {
+    text-align: left;
+  }
+  .resume-skills-information--1, .resume-skills-information--2, .resume-skills-information--3, .resume-skills-information--4, .resume-skills-information--5, .resume-skills-information--6 {
+    justify-self: left;
   }
   .projects {
     width: 75%;
@@ -814,6 +848,9 @@ body, html {
   }
   .resume-education-information__description {
     font-size: 16px;
+  }
+  .resume-skills {
+    padding-left: 10%;
   }
   .resume-skills__title {
     font-size: 20px;

@@ -1,8 +1,10 @@
+//click on menu burger(when closed)
 $('.burger').click(() => {
     $('.burger__line').toggleClass('burger__line--open');
     $('.nav__list').toggleClass('nav__list--open');
 });
 
+//click on menu close button
 $('.nav__link').click(() => {
   $('.burger__line').toggleClass('burger__line--open');
   $('.nav__list').toggleClass('nav__list--open');
