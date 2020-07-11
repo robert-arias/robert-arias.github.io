@@ -593,6 +593,8 @@ body, html {
             justify-content: center;
             align-items: center;
             text-decoration: none;
+            padding-right: 15px;
+            padding-left: 15px;
 
             &::before {
                 content: '';
@@ -683,21 +685,6 @@ body, html {
     }
 }
 
-@media screen and (min-width: 500px) {
-    .projects-gallery__image {
-        &::before {
-            height: 550px;
-        }
-
-        &--1,
-        &--2,
-        &--3,
-        &--4 {
-            min-height: 550px;
-        }
-    }
-}
-
 @media screen and (min-width: 800px) {
     .landing-page {
         &__title {
@@ -727,6 +714,18 @@ body, html {
                 width: 50%;
                 flex-shrink: 0;
             }
+        }
+    }
+
+    .projects {
+        width: 75%;
+
+        &-gallery {
+            grid-template-areas: 
+                    'nail-garden nail-garden multicare multicare'
+                    'nail-garden nail-garden multicare multicare'
+                    'farmacia-rosales farmacia-rosales connect-four connect-four'
+                    'farmacia-rosales farmacia-rosales connect-four connect-four';
         }
     }
 }
@@ -880,6 +879,32 @@ body, html {
                 &__item {
                     font-size: 16px;
                 }
+            }
+        }
+    }
+
+    .projects {
+        &__title {
+            &--mini {
+                font-size: 1.2em;
+            }
+
+            &--big {
+                font-size: 2em;
+            }
+        }
+
+        &__paragraph {
+            font-size: 18px;
+        }
+
+        &-gallery {
+            &__title {
+                font-size: 32px;
+            }
+
+            &__paragraph {
+                font-size: 16px;
             }
         }
     }

@@ -600,6 +600,8 @@ body, html {
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .projects-gallery__image::before {
@@ -688,15 +690,6 @@ body, html {
   }
 }
 
-@media screen and (min-width: 500px) {
-  .projects-gallery__image::before {
-    height: 550px;
-  }
-  .projects-gallery__image--1, .projects-gallery__image--2, .projects-gallery__image--3, .projects-gallery__image--4 {
-    min-height: 550px;
-  }
-}
-
 @media screen and (min-width: 800px) {
   .landing-page__title {
     font-size: 7vw;
@@ -718,6 +711,12 @@ body, html {
   .resume-skills-information {
     width: 50%;
     flex-shrink: 0;
+  }
+  .projects {
+    width: 75%;
+  }
+  .projects-gallery {
+    grid-template-areas: 'nail-garden nail-garden multicare multicare' 'nail-garden nail-garden multicare multicare' 'farmacia-rosales farmacia-rosales connect-four connect-four' 'farmacia-rosales farmacia-rosales connect-four connect-four';
   }
 }
 
@@ -823,6 +822,21 @@ body, html {
     font-size: 20px;
   }
   .resume-skills-information__item {
+    font-size: 16px;
+  }
+  .projects__title--mini {
+    font-size: 1.2em;
+  }
+  .projects__title--big {
+    font-size: 2em;
+  }
+  .projects__paragraph {
+    font-size: 18px;
+  }
+  .projects-gallery__title {
+    font-size: 32px;
+  }
+  .projects-gallery__paragraph {
     font-size: 16px;
   }
 }
