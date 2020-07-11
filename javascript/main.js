@@ -8,6 +8,10 @@ $('.nav__link').click(() => {
   $('.nav__list').toggleClass('nav__list--open');
 })
 
+ScrollReveal().reveal('.about', { duration: 2500 });
+ScrollReveal().reveal('.resume', { duration: 2500 });
+ScrollReveal().reveal('.projects', { duration: 2500 });
+
 //from: https://codepen.io/Danielgroen/pen/VeRPOq
 $(document).on('DOMContentLoaded', () => {
   // array with texts to type in typewriter
@@ -56,11 +60,7 @@ $(document).on('DOMContentLoaded', () => {
 // Select all links with hashes
 $('a[href*="#"]').click(function(event) {
   // On-page links
-  if (
-    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-    && 
-    location.hostname == this.hostname
-  ) {
+  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
     // Figure out element to scroll to
     var target = $(this.hash);
     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
