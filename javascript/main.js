@@ -8,9 +8,8 @@ $('.nav__link').click(() => {
   $('.nav__list').toggleClass('nav__list--open');
 })
 
-ScrollReveal().reveal('.about', { duration: 2500 });
-ScrollReveal().reveal('.resume', { duration: 2500 });
-ScrollReveal().reveal('.projects', { duration: 2500 });
+const sr = ScrollReveal( { reset: true });
+sr.reveal('article', { duration: 2000 });
 
 //from: https://codepen.io/Danielgroen/pen/VeRPOq
 $(document).on('DOMContentLoaded', () => {
