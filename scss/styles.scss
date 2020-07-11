@@ -52,7 +52,7 @@ body, html {
 .header {
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 110;
 }
 
 .nav {
@@ -371,178 +371,296 @@ body, html {
     &__paragraph {
         @include paragraph($secondary-paragraph-color);
     }
+
+    &-education {
+        width: 100%;
+        margin-bottom: 25px;
+    
+        &__title {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: .15em;
+            text-align: center;
+            margin-bottom: 15px;
+            position: relative;
+    
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: calc(50% - 65px);
+                background-color: $primary-font-color;
+                height: 2px;
+                width: 35px;
+            }
+        }
+    
+        &-timeline {
+            position: relative;
+    
+            &::before {
+                content: '';
+                display: block;
+                width: 1px;
+                height: 100%;
+                background: rgba($color: #000000, $alpha: .3);
+                position: absolute;
+                top: 0;
+                left: 10%;
+            }
+        }
+    
+        &-information {
+            position: relative;
+    
+            &__icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 40px;
+                width: 40px;
+                background: #313131;
+                border-radius: 50%;
+                color: white;
+                position: absolute;
+                top: 15px;
+                left: calc(10% - 20px); /*half of icon width*/
+            }
+    
+            &__header {
+                padding-top: 15px;
+                margin-left: 20%;
+                margin-bottom: 25px;
+                position: relative;
+    
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: -10px;
+                    height: 3px;
+                    width: 35px;
+                    border-radius: 10px;
+                    background: rgba($secondary-paragraph-color, $alpha: .5);
+                }
+            }
+    
+            &__school {
+                font-size: 18px;
+            }
+    
+            &__time {
+                font-size: 14px;
+                color: $secondary-paragraph-color;
+            }
+    
+            &__content {
+                margin-left: 20%;
+                padding-bottom: 15px;
+            }
+    
+            &__major {
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+    
+            &__description {
+                font-size: 14px;
+                font-weight: 300;
+                color: $secondary-paragraph-color;
+            }
+    
+            &__link {
+                text-decoration: none;
+                color: inherit;
+                border-bottom: 2px solid $primary-font-color;
+                transition: all .2s linear;
+    
+                &:hover {
+                    color: $primary-font-color
+                }
+            }
+        }
+    }
+
+    &-skills {
+        &__title {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: .15em;
+            text-align: center;
+            margin-bottom: 15px;
+            position: relative;
+    
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: calc(50% - 36.36px);
+                background-color: $primary-font-color;
+                height: 2px;
+                width: 35px;
+            }
+        }
+    
+        &-information-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        &-information {
+            margin-bottom: 20px;
+    
+            &__title {
+                font-size: 18px;
+                margin-bottom: 5px;
+                text-align: center;
+            }
+    
+            &__list {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+    
+            &__item {
+                flex-shrink: 0;
+                font-size: 14px;
+                font-weight: 300;
+                color: $secondary-paragraph-color;
+                text-align: center;
+    
+                &:not(:last-child) {
+                    margin-right: 10px;
+                }
+            }
+    
+            &__icon {
+                color: $primary-font-color;
+                margin-right: 3px;
+            }
+        }
+    }
 }
 
-.education {
-    width: 100%;
-    margin-bottom: 25px;
+.projects {
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
 
     &__title {
-        font-size: 18px;
-        text-transform: uppercase;
-        letter-spacing: .15em;
         text-align: center;
-        margin-bottom: 15px;
-        position: relative;
 
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: calc(50% - 65px);
-            background-color: $primary-font-color;
-            height: 2px;
-            width: 35px;
+        &--mini {
+            font-size: .9em;
+            text-transform: uppercase;
+            letter-spacing: .3em;
+            color: $primary-font-color;
+        }
+
+        &--big {
+            font-size: 1.7em;
+            margin-bottom: 25px;
         }
     }
 
-    &-timeline {
-        position: relative;
-
-        &::before {
-            content: '';
-            display: block;
-            width: 1px;
-            height: 100%;
-            background: rgba($color: #000000, $alpha: .3);
-            position: absolute;
-            top: 0;
-            left: 10%;
-        }
+    &__paragraph {
+        @include paragraph($primary-paragraph-color);
     }
 
-    &-information {
-        position: relative;
+    &-gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 15px;
+        grid-template-areas: 
+                    'nail-garden nail-garden nail-garden nail-garden'
+                    'multicare multicare multicare multicare'
+                    'farmacia-rosales farmacia-rosales farmacia-rosales farmacia-rosales'
+                    'connect-four connect-four connect-four connect-four';
 
-        &__icon {
+        &__image {
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 40px;
-            width: 40px;
-            background: #313131;
-            border-radius: 50%;
-            color: white;
-            position: absolute;
-            top: 15px;
-            left: calc(10% - 20px); /*half of icon width*/
-        }
-
-        &__header {
-            padding-top: 15px;
-            margin-left: 20%;
-            margin-bottom: 25px;
-            position: relative;
+            text-decoration: none;
 
             &::before {
                 content: '';
                 position: absolute;
+                width: 100%;
+                height: 400px;
+                top: 0;
                 left: 0;
-                bottom: -10px;
-                height: 3px;
-                width: 35px;
-                border-radius: 10px;
-                background: rgba($secondary-paragraph-color, $alpha: .5);
+                background-color: rgba(black, $alpha: .6);
+                opacity: 0;
+                transition: opacity .5s;
+            }
+
+            &--1 {
+                grid-area: nail-garden;
+                background-image: url('../assets/nail-garden.jpg');
+                min-height: 400px;
+                object-fit: cover;
+            }
+
+            &--2 {
+                grid-area: multicare;
+                background-image: url('../assets/sistema-multicare.jpg');
+                min-height: 400px;
+                object-fit: cover;
+            }
+
+            &--3 {
+                grid-area: farmacia-rosales;
+                background-image: url('../assets/farmacia-rosales.jpg');
+                min-height: 400px;
+                object-fit: cover;
+            }
+
+            &--4 {
+                grid-area: connect-four;
+                background-image: url('../assets/connect-four.jpg');
+                min-height: 400px;
+                object-fit: cover;
             }
         }
-
-        &__school {
-            font-size: 18px;
-        }
-
-        &__time {
-            font-size: 14px;
-            color: $secondary-paragraph-color;
-        }
-
-        &__content {
-            margin-left: 20%;
-            padding-bottom: 15px;
-        }
-
-        &__major {
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
-
-        &__description {
-            font-size: 14px;
-            font-weight: 300;
-            color: $secondary-paragraph-color;
-        }
-
-        &__link {
-            text-decoration: none;
-            color: inherit;
-            border-bottom: 2px solid $primary-font-color;
-            transition: all .2s linear;
-
-            &:hover {
-                color: $primary-font-color
-            }
-        }
-    }
-}
-
-.skills {
-    &__title {
-        font-size: 18px;
-        text-transform: uppercase;
-        letter-spacing: .15em;
-        text-align: center;
-        margin-bottom: 15px;
-        position: relative;
-
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: calc(50% - 36.36px);
-            background-color: $primary-font-color;
-            height: 2px;
-            width: 35px;
-        }
-    }
-
-    &-information-container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    &-information {
-        margin-bottom: 20px;
 
         &__title {
-            font-size: 18px;
-            margin-bottom: 5px;
+            font-size: 20px;
+            color: white;
+            z-index: 100;
+            opacity: 0;
+            transition: opacity .5s;
+        }
+
+        &__paragraph {
+            font-size: 12px;
+            text-transform: uppercase;
             text-align: center;
+            letter-spacing: .15em;
+            color: rgba(white, $alpha: .6);
+            z-index: 100;
+            opacity: 0;
+            transition: opacity .5s;
         }
 
-        &__list {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        &__item {
-            flex-shrink: 0;
-            font-size: 14px;
-            font-weight: 300;
-            color: $secondary-paragraph-color;
-            text-align: center;
-
-            &:not(:last-child) {
-                margin-right: 10px;
-            }
-        }
-
-        &__icon {
-            color: $primary-font-color;
-            margin-right: 3px;
+        &__image:hover::before,
+        &__image:hover &__title,
+        &__image:hover &__paragraph {
+            opacity: 1;
         }
     }
+
 }
 
 .ticking {
@@ -553,6 +671,21 @@ body, html {
 @keyframes caret {
     50% {
       border-color: transparent;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .projects-gallery__image {
+        &::before {
+            height: 550px;
+        }
+
+        &--1,
+        &--2,
+        &--3,
+        &--4 {
+            min-height: 550px;
+        }
     }
 }
 
@@ -574,17 +707,17 @@ body, html {
 
     .resume {
         width: 75%;
-    }
 
-    .skills {
-        &-information-container {
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-
-        &-information {
-            width: 50%;
-            flex-shrink: 0;
+        &-skills {
+            &-information-container {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+    
+            &-information {
+                width: 50%;
+                flex-shrink: 0;
+            }
         }
     }
 }
@@ -693,51 +826,51 @@ body, html {
         &__paragraph {
             font-size: 18px;
         }
-    }
 
-    .education {
-        &__title {
-            font-size: 20px;
-
-            &::after {
-                left: calc(50% - 72.075px);
-            }
-        }
-
-        &-information {
-            &__icon {
-                width: 50px;
-                height: 50px;
-                font-size: 18px;
-                left: calc(10% - 25px);
-            }
-
-            &__school {
+        &-education {
+            &__title {
                 font-size: 20px;
+    
+                &::after {
+                    left: calc(50% - 72.075px);
+                }
             }
-
-            &__major {
-                font-size: 18px;
-            }
-
-            &__description {
-                font-size: 16px;
+    
+            &-information {
+                &__icon {
+                    width: 50px;
+                    height: 50px;
+                    font-size: 18px;
+                    left: calc(10% - 25px);
+                }
+    
+                &__school {
+                    font-size: 20px;
+                }
+    
+                &__major {
+                    font-size: 18px;
+                }
+    
+                &__description {
+                    font-size: 16px;
+                }
             }
         }
-    }
 
-    .skills {
-        &__title {
-            font-size: 20px;
-        }
-
-        &-information {
+        &-skills {
             &__title {
                 font-size: 20px;
             }
-
-            &__item {
-                font-size: 16px;
+    
+            &-information {
+                &__title {
+                    font-size: 20px;
+                }
+    
+                &__item {
+                    font-size: 16px;
+                }
             }
         }
     }

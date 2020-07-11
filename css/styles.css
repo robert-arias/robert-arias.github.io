@@ -13,7 +13,7 @@ body, html {
 .header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 110;
 }
 
 .nav {
@@ -377,12 +377,12 @@ body, html {
   margin-bottom: 25px;
 }
 
-.education {
+.resume-education {
   width: 100%;
   margin-bottom: 25px;
 }
 
-.education__title {
+.resume-education__title {
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: .15em;
@@ -391,7 +391,7 @@ body, html {
   position: relative;
 }
 
-.education__title::after {
+.resume-education__title::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -401,11 +401,11 @@ body, html {
   width: 35px;
 }
 
-.education-timeline {
+.resume-education-timeline {
   position: relative;
 }
 
-.education-timeline::before {
+.resume-education-timeline::before {
   content: '';
   display: block;
   width: 1px;
@@ -416,11 +416,11 @@ body, html {
   left: 10%;
 }
 
-.education-information {
+.resume-education-information {
   position: relative;
 }
 
-.education-information__icon {
+.resume-education-information__icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -435,14 +435,14 @@ body, html {
   /*half of icon width*/
 }
 
-.education-information__header {
+.resume-education-information__header {
   padding-top: 15px;
   margin-left: 20%;
   margin-bottom: 25px;
   position: relative;
 }
 
-.education-information__header::before {
+.resume-education-information__header::before {
   content: '';
   position: absolute;
   left: 0;
@@ -453,43 +453,43 @@ body, html {
   background: rgba(104, 102, 102, 0.5);
 }
 
-.education-information__school {
+.resume-education-information__school {
   font-size: 18px;
 }
 
-.education-information__time {
+.resume-education-information__time {
   font-size: 14px;
   color: #686666;
 }
 
-.education-information__content {
+.resume-education-information__content {
   margin-left: 20%;
   padding-bottom: 15px;
 }
 
-.education-information__major {
+.resume-education-information__major {
   font-size: 16px;
   margin-bottom: 5px;
 }
 
-.education-information__description {
+.resume-education-information__description {
   font-size: 14px;
   font-weight: 300;
   color: #686666;
 }
 
-.education-information__link {
+.resume-education-information__link {
   text-decoration: none;
   color: inherit;
   border-bottom: 2px solid royalblue;
   transition: all .2s linear;
 }
 
-.education-information__link:hover {
+.resume-education-information__link:hover {
   color: royalblue;
 }
 
-.skills__title {
+.resume-skills__title {
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: .15em;
@@ -498,7 +498,7 @@ body, html {
   position: relative;
 }
 
-.skills__title::after {
+.resume-skills__title::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -508,30 +508,30 @@ body, html {
   width: 35px;
 }
 
-.skills-information-container {
+.resume-skills-information-container {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.skills-information {
+.resume-skills-information {
   margin-bottom: 20px;
 }
 
-.skills-information__title {
+.resume-skills-information__title {
   font-size: 18px;
   margin-bottom: 5px;
   text-align: center;
 }
 
-.skills-information__list {
+.resume-skills-information__list {
   list-style: none;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.skills-information__item {
+.resume-skills-information__item {
   flex-shrink: 0;
   font-size: 14px;
   font-weight: 300;
@@ -539,13 +539,132 @@ body, html {
   text-align: center;
 }
 
-.skills-information__item:not(:last-child) {
+.resume-skills-information__item:not(:last-child) {
   margin-right: 10px;
 }
 
-.skills-information__icon {
+.resume-skills-information__icon {
   color: royalblue;
   margin-right: 3px;
+}
+
+.projects {
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.projects__title {
+  text-align: center;
+}
+
+.projects__title--mini {
+  font-size: .9em;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  color: royalblue;
+}
+
+.projects__title--big {
+  font-size: 1.7em;
+  margin-bottom: 25px;
+}
+
+.projects__paragraph {
+  font-weight: 300;
+  font-size: 16px;
+  color: gray;
+  hyphens: auto;
+  word-wrap: break-word;
+  line-height: 25px;
+  margin-bottom: 25px;
+}
+
+.projects-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 15px;
+  grid-template-areas: 'nail-garden nail-garden nail-garden nail-garden' 'multicare multicare multicare multicare' 'farmacia-rosales farmacia-rosales farmacia-rosales farmacia-rosales' 'connect-four connect-four connect-four connect-four';
+}
+
+.projects-gallery__image {
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.projects-gallery__image::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+.projects-gallery__image--1 {
+  grid-area: nail-garden;
+  background-image: url("../assets/nail-garden.jpg");
+  min-height: 400px;
+  object-fit: cover;
+}
+
+.projects-gallery__image--2 {
+  grid-area: multicare;
+  background-image: url("../assets/sistema-multicare.jpg");
+  min-height: 400px;
+  object-fit: cover;
+}
+
+.projects-gallery__image--3 {
+  grid-area: farmacia-rosales;
+  background-image: url("../assets/farmacia-rosales.jpg");
+  min-height: 400px;
+  object-fit: cover;
+}
+
+.projects-gallery__image--4 {
+  grid-area: connect-four;
+  background-image: url("../assets/connect-four.jpg");
+  min-height: 400px;
+  object-fit: cover;
+}
+
+.projects-gallery__title {
+  font-size: 20px;
+  color: white;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+.projects-gallery__paragraph {
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: .15em;
+  color: rgba(255, 255, 255, 0.6);
+  z-index: 100;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+.projects-gallery__image:hover::before,
+.projects-gallery__image:hover .projects-gallery__title,
+.projects-gallery__image:hover .projects-gallery__paragraph {
+  opacity: 1;
 }
 
 .ticking {
@@ -556,6 +675,15 @@ body, html {
 @keyframes caret {
   50% {
     border-color: transparent;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .projects-gallery__image::before {
+    height: 550px;
+  }
+  .projects-gallery__image--1, .projects-gallery__image--2, .projects-gallery__image--3, .projects-gallery__image--4 {
+    min-height: 550px;
   }
 }
 
@@ -573,11 +701,11 @@ body, html {
   .resume {
     width: 75%;
   }
-  .skills-information-container {
+  .resume-skills-information-container {
     flex-direction: row;
     flex-wrap: wrap;
   }
-  .skills-information {
+  .resume-skills-information {
     width: 50%;
     flex-shrink: 0;
   }
@@ -657,34 +785,34 @@ body, html {
   .resume__paragraph {
     font-size: 18px;
   }
-  .education__title {
+  .resume-education__title {
     font-size: 20px;
   }
-  .education__title::after {
+  .resume-education__title::after {
     left: calc(50% - 72.075px);
   }
-  .education-information__icon {
+  .resume-education-information__icon {
     width: 50px;
     height: 50px;
     font-size: 18px;
     left: calc(10% - 25px);
   }
-  .education-information__school {
+  .resume-education-information__school {
     font-size: 20px;
   }
-  .education-information__major {
+  .resume-education-information__major {
     font-size: 18px;
   }
-  .education-information__description {
+  .resume-education-information__description {
     font-size: 16px;
   }
-  .skills__title {
+  .resume-skills__title {
     font-size: 20px;
   }
-  .skills-information__title {
+  .resume-skills-information__title {
     font-size: 20px;
   }
-  .skills-information__item {
+  .resume-skills-information__item {
     font-size: 16px;
   }
 }
