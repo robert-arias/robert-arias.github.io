@@ -1,0 +1,255 @@
+@media screen and (min-width: 800px) {
+    .landing-page {
+        &__title {
+            font-size: 7vw;
+            height: 172px;
+        }
+
+        &__image {
+            width: 65%;
+            margin-bottom: 40px;
+        }
+    }
+
+    .about,
+    .resume,
+    .projects,
+    .contact {
+        width: $secondary-article-width;
+    }
+
+    .resume {
+        &-skills {
+            &-information {
+                &-container {
+                    grid-template-areas: 'skills-1 skills-1 skills-2' 'skills-3 skills-3 skills-4' 'skills-5 skills-5 skills-6';
+                }
+
+                &__title,
+                &__item {
+                    text-align: left;
+                }
+
+                &__list {
+                    display: block;
+                }
+
+                &--1,
+                &--2,
+                &--3,
+                &--4,
+                &--5,
+                &--6 {
+                    justify-self: left;
+                }
+            }
+        }
+    }
+
+    .projects {
+        &-gallery {
+            grid-template-areas: 'nail-garden nail-garden multicare multicare' 'nail-garden nail-garden multicare multicare' 'farmacia-rosales farmacia-rosales connect-four connect-four' 'farmacia-rosales farmacia-rosales connect-four connect-four';
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .landing-page {
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 0 70px 150px 70px;
+        position: relative;
+
+        &__title {
+            height: 184px;
+            width: 700px;
+            padding-top: 25px;
+            font-size: 3.3em;
+            margin-right: 30px;
+            margin-bottom: 0;
+        }
+
+        &__image {
+            height: auto;
+            width: 66%;
+            margin-bottom: 0;
+        }
+
+        &__list {
+            position: absolute;
+            bottom: 25px;
+        }
+
+        &__item {
+            &:not(:last-child) {
+                margin-right: 25px;
+            }
+        }
+    }
+
+    .about,
+    .resume,
+    .projects,
+    .contact {
+        &__title {
+            &--mini {
+                font-size: 1.2em;
+            }
+
+            &--big {
+                font-size: 2em;
+            }
+        }
+
+        &__paragraph {
+            font-size: 18px;
+        }
+    }
+
+    .about {
+        &-info {
+            width: 100%;
+            flex-direction: row;
+        }
+
+        &-profile,
+        &-skills {
+            width: 50%;
+
+            &__title {
+                text-align: left;
+                font-size: 20px;
+
+                &::after {
+                    left: 0;
+                }
+            }
+
+            &__paragraph {
+                font-size: 18px;
+            }
+        }
+
+        &-profile {
+            margin-right: 35px;
+        }
+
+        &-buttons {
+            flex-direction: row;
+
+            &__hire,
+            &__cv {
+                width: 50%;
+            }
+
+            &__hire {
+                margin-right: 20px;
+            }
+        }
+    }
+
+    .resume {
+        &-education {
+            &__title {
+                font-size: 20px;
+    
+                &::after {
+                    left: calc(50% - 72.075px);
+                }
+            }
+    
+            &-information {
+                &__icon {
+                    width: 50px;
+                    height: 50px;
+                    font-size: 18px;
+                    left: calc(10% - 25px);
+                }
+    
+                &__school {
+                    font-size: 20px;
+                }
+    
+                &__major {
+                    font-size: 18px;
+                }
+    
+                &__description {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &-skills {
+            padding-left: 10%;
+            &__title {
+                font-size: 20px;
+            }
+    
+            &-information {
+                &__title {
+                    font-size: 20px;
+                }
+    
+                &__item {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .projects {
+        &-gallery {
+            &__title {
+                font-size: 32px;
+            }
+
+            &__paragraph {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .contact {
+        &-information {
+            &-container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            margin-top: 25px;
+            margin-bottom: 0;
+
+            &__icon {
+                font-size: 45px;
+            }
+
+            &__title {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .landing-page {
+        &__title {
+            height: 345px;
+            padding-top: 105px;
+            font-size: 5em;
+        }
+
+        &__image {
+            padding-top: 40px;
+            height: 350px;
+            width: auto;
+        }
+    }
+
+    .about,
+    .resume,
+    .projects,
+    .contact {
+        width: $terciary-article-width;
+    }
+}

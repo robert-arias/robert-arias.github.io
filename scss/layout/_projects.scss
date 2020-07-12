@@ -1,0 +1,98 @@
+.projects {
+    &__paragraph {
+        @include paragraph($primary-paragraph-color);
+    }
+
+    &-gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 15px;
+        grid-template-areas: 'nail-garden nail-garden nail-garden nail-garden' 'multicare multicare multicare multicare' 'farmacia-rosales farmacia-rosales farmacia-rosales farmacia-rosales' 'connect-four connect-four connect-four connect-four';
+
+        &__image {
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            padding-right: 15px;
+            padding-left: 15px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: rgba(black, $alpha: .6);
+                opacity: 0;
+                transition: opacity .5s;
+            }
+
+            &--1,
+            &--2,
+            &--3,
+            &--4 {
+                width: 100%;
+                height: 0;
+                padding-top: 150%; /*(height/width)*100*/
+                object-fit: cover;
+            }
+
+            &--1 {
+                grid-area: nail-garden;
+                background-image: url('../assets/nail-garden.jpg');
+            }
+
+            &--2 {
+                grid-area: multicare;
+                background-image: url('../assets/sistema-multicare.jpg');
+            }
+
+            &--3 {
+                grid-area: farmacia-rosales;
+                background-image: url('../assets/farmacia-rosales.jpg');
+            }
+
+            &--4 {
+                grid-area: connect-four;
+                background-image: url('../assets/connect-four.jpg');
+            }
+        }
+
+        &__title,
+        &__paragraph {
+            z-index: 100;
+            opacity: 0;
+            transition: opacity .5s;
+        }
+
+        &__title {
+            margin-top: -150%;
+            font-size: 20px;
+            color: $gallery-font-color;
+        }
+
+        &__paragraph {
+            font-size: 12px;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: .15em;
+            color: rgba($gallery-font-color, $alpha: .6);
+        }
+
+        &__image:hover::before,
+        &__image:hover &__title,
+        &__image:hover &__paragraph {
+            opacity: 1;
+        }
+    }
+
+}

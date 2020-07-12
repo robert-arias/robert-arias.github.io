@@ -1,0 +1,41 @@
+.contact {
+    position: relative;
+
+    &__paragraph {
+        @include paragraph($secondary-paragraph-color);
+    }
+
+    &-information {
+        &-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+
+        &__icon {
+            font-size: 40px;
+            color: $primary-font-color;
+        }
+
+        &__title {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: .15em;
+            margin-top: 15px;
+        }
+
+        &__paragraph {
+            @include paragraph($secondary-paragraph-color);
+            text-align: center;
+        }
+    }
+    
+}

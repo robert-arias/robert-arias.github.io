@@ -1,0 +1,114 @@
+.about {
+    &__paragraph {
+        @include paragraph($primary-paragraph-color);
+    }
+
+    &-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-profile,
+    &-skills {
+        &__title {
+            @include subcontainer-title;
+            
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                background-color: $primary-font-color;
+                height: $line-height;
+                width: $subtitle-line-width;
+            }
+        }
+
+        &__paragraph {
+            @include paragraph($primary-paragraph-color);
+        }
+    
+        &__list {
+            list-style: none;
+        }
+    
+        &__item {
+            margin-bottom: 20px;
+            line-height: 18px;
+        }
+    
+        &__strong {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    }
+
+    &-profile {
+        margin-bottom: 35px;
+
+        &__title::after {
+            left: calc(50% - 44.525px);
+        }
+
+        &__span {
+            display: block;
+            color: $primary-paragraph-color;
+            font-weight: 300;
+        }
+    }
+
+    &-skills {
+        margin-bottom: 35px;
+
+        &__title::after {
+            left: calc(50% - 36.36px);
+        }
+
+        &__icon {
+            color: $primary-font-color;
+            margin-right: 10px;
+        }
+
+        &__item {
+            margin-bottom: 35px;
+        }
+    }
+
+    &-buttons {
+        display: flex;
+        flex-direction: column;
+
+        &__hire,
+        &__cv {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: .15em;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 3px solid $primary-font-color;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        &__hire {
+            color: $primary-font-color;
+            &:hover {
+                color: $secondary-font-color;
+                background-color: $primary-font-color;
+            }
+        }
+
+        &__cv {
+            color: $secondary-font-color;
+            background-color: $primary-font-color;
+            &:hover {
+                border-color: rgba($primary-font-color, .5);
+                background-color: rgba($primary-font-color, .8);
+            }
+        }
+    }
+}
