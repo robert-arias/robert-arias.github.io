@@ -284,8 +284,34 @@
                     <h5 class="contact__title resume__title--mini">Contact</h5>
                     <h1 class="contact__title resume__title--big">I'd love to hear from you.</h1>
                     <p class="contact__paragraph">
-                        Thank you very much for checking my portfolio out! If you are interested in contacting me, you can do it through my social media or by email or phone number.
+                        Thank you very much for checking my portfolio out! If you are interested in contacting me, you can do it through my social media or by email or phone number. You can also send me a message if you fill out the form below.
                     </p>
+                    <form name="contactForm" id="contactForm" method="post" action="https://formspree.io/xoqwzlwn" class="contact-form">
+                        <div class="contact-form-box">
+                            <input class="contact-form-box__input" type="text" name="name" placeholder="Full name">
+                            <label class="contact-form-box__label" for="name">Full name</label>
+                        </div>
+    
+                        <div class="contact-form-box">
+                            <input class="contact-form-box__input" type="email" name="email" placeholder="Email">
+                            <label class="contact-form-box__label" for="email">Email</label>
+                        </div>
+    
+                        <div class="contact-form-box">
+                            <input class="contact-form-box__input" type="text" name="subject" placeholder="Subject">
+                            <label class="contact-form-box__label" for="subject">Subject</label>
+                        </div>
+    
+                        <div class="contact-form-box">
+                            <textarea class="contact-form-box__input contact-form-box__input--message" name="message" rows="10" placeholder="Message" cols="40"></textarea>
+                            <label class="contact-form-box__label contact-form-box__label--message" for="message">Message</label>
+                        </div>
+                        <button class="contact-form__btn" type="submit">Submit</button>
+                        <div class="contact-alert contact-alert--success">
+                            <span class="contact-alert__closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            The message has been sent!
+                          </div>
+                    </form>
                     <div class="contact-information-container">
                         <div class="contact-information">
                             <i class="contact-information__icon fas fa-map-marker-alt"></i>

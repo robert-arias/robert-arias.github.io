@@ -51,6 +51,14 @@
             grid-template-areas: 'nail-garden nail-garden multicare multicare' 'nail-garden nail-garden multicare multicare' 'farmacia-rosales farmacia-rosales connect-four connect-four' 'farmacia-rosales farmacia-rosales connect-four connect-four';
         }
     }
+
+    .contact {
+        &-form {
+            &__btn {
+                padding: 20px;
+            }
+        }
+    }
 }
 
 @media screen and (min-width: 1000px) {

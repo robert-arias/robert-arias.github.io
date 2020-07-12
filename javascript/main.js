@@ -10,10 +10,12 @@ $('.nav__link').click(() => {
   $('.nav__list').toggleClass('nav__list--open');
 })
 
+//reveal animation
 const sr = ScrollReveal( { reset: true });
 sr.reveal('article', { duration: 2000 });
 
 //from: https://codepen.io/Danielgroen/pen/VeRPOq
+//text writer animation
 $(document).on('DOMContentLoaded', () => {
   // array with texts to type in typewriter
   const dataText = ["Hi, <br> I'm Robert Arias."];
@@ -58,6 +60,7 @@ $(document).on('DOMContentLoaded', () => {
 });
 
 //from https://css-tricks.com/snippets/jquery/smooth-scrolling/
+//smooth animation
 // Select all links with hashes
 $('a[href*="#"]').click(function(event) {
   // On-page links
@@ -75,3 +78,15 @@ $('a[href*="#"]').click(function(event) {
     }
   }
 });
+
+$('.contact-form__btn').on('click', () => {
+  const message = $('#contactForm').serialize();
+  $.ajax( {
+    type: 'POST',
+    url: 'https://formspree.io/xoqwzlwn',
+    data: { message: message },
+    dataType: 'json'
+  });
+  $('.contact-alert').show();
+  return false;
+})

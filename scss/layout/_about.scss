@@ -106,8 +106,8 @@
             color: $secondary-font-color;
             background-color: $primary-font-color;
             &:hover {
-                border-color: rgba($primary-font-color, .5);
-                background-color: rgba($primary-font-color, .8);
+                border-color: $hover-color;
+                background-color: $hover-color;
             }
         }
     }
