@@ -1,4 +1,4 @@
-import { MainButton } from './components/buttons/buttons';
+import { MainButton, SecondaryButton } from './components/buttons/buttons';
 import ArrowSVG from "./assets/arrow.svg";
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
       <MainButton link_to="#" title="See more" img={ArrowSVG}/>
       <br />
       <br />
+      <SecondaryButton link_to="#" title="Download CV" />
     </div>
   );
 }

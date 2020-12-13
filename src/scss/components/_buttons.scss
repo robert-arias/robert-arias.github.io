@@ -11,17 +11,16 @@
     line-height: 150%;
     letter-spacing: $wide-letter-spacing;
 
-    &--main, &--main-img {
+    &--main, &--main-icon {
         background-color: $purple;
         color: $white;
 
         &:hover {
             background-color: $dark-purple;
-            box-shadow: $default-btn-shadow;
         }
     }
 
-    &--main-img {
+    &--main-icon {
         display: inline-block;
         padding-right: 0;
         font-size: $lowercase-btn-font-size;
@@ -29,8 +28,17 @@
         letter-spacing: $narrow-letter-spacing;
     }
 
-    &__img {
+    &__icon {
         margin-left: 10px;
         padding-right: 18px;
+    }
+
+    &--secondary {
+        background-color: $purple-terciary;
+        color: $purple;
+        
+        &:hover {
+            background-color: $purple-quaternary;
+        }
     }
 }
