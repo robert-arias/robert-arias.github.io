@@ -1,15 +1,36 @@
 .btn {
-    display: inline-block;
-    padding: 10px 25px;
-    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    padding: $default-btn-padding;
+    border-radius: $default-btn-radius;
+    font-family: $font-inter;
     text-decoration: none;
+    font-size: $uppercase-btn-font-size;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: $wide-letter-spacing;
 
-    &--main {
-        background-color: #4169E1;
-        color: white;
+    &--main, &--main-img {
+        background-color: $purple;
+        color: $white;
 
         &:hover {
-            background-color: #204ACB;
+            background-color: $dark-purple;
+            box-shadow: $default-btn-shadow;
         }
+    }
+
+    &--main-img {
+        display: inline-block;
+        padding-right: 0;
+        font-size: $lowercase-btn-font-size;
+        text-transform: initial;
+        letter-spacing: $narrow-letter-spacing;
+    }
+
+    &__img {
+        margin-left: 10px;
+        padding-right: 18px;
     }
 }
