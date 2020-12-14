@@ -1,0 +1,20 @@
+.burger {
+    background-color: transparent;
+    border: none;
+    border-radius: $default-radius;
+    padding: .6em .5em .5em .5em;
+    cursor: pointer;
+    
+    &__img {
+        width: 21px;
+        height: 16px;
+    }
+
+    &:hover {
+        background-color: #e6ecfd;
+
+        & .burger__img > * {
+            fill: $dark-purple;
+        }
+    }
+}

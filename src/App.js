@@ -1,4 +1,5 @@
 import { MainButton, SecondaryButton } from './components/buttons/buttons';
+import { Navigation } from './components/navigations/navigation';
 import ArrowSVG from "./assets/arrow.svg";
 
 function App() {
@@ -11,6 +12,9 @@ function App() {
       <br />
       <br />
       <SecondaryButton link_to="#" title="Download CV" />
+      <br />
+      <br />
+      <Navigation />
     </div>
   );
 }

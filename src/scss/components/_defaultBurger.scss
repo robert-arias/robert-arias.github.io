@@ -1,0 +1,63 @@
+.default-burger {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    transition: all .3s linear;
+
+    &:hover &__line,
+    &:hover &__line::before,
+    &:hover &__line::after {
+        background: $dark-purple;
+    }
+
+    &:hover &__line--open {
+        background: transparent;
+    }
+
+    &__line {
+        width: 23px;
+        position: relative;
+        transition: all .1s linear;
+
+        &,
+        &::before,
+        &::after {
+            height: 2px;
+            background: $purple;
+            border-radius: 5px;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            transition: all .2s linear;
+        }
+
+        &::before {
+            width: inherit;
+            transform: translateY(-8px);
+        }
+
+        &::after {
+            width: 12px;
+            transform: translateY(8px);
+        }
+
+        &--open {
+            background: transparent;
+
+            &::before {
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
