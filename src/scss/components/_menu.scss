@@ -1,0 +1,36 @@
+.menu-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: .5rem;
+    border: 1px solid black;
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #FFF;
+    padding: .5rem;
+    border-radius: .5rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -1px rgba(0,0,0,.06);
+    position: absolute;
+
+    &-closeWrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &__closeBtn {
+        width: 40px;
+        height: 40px;
+    }
+
+    &__list {
+        list-style: none;
+    }
+}
