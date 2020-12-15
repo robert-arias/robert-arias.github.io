@@ -40,7 +40,6 @@ export function Navigation() {
 }
 
 function Menu({ items }) {
-
     return (
         <div className='menu-wrapper'>
             <div className='menu'>
