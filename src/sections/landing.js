@@ -6,7 +6,7 @@ export function Landing() {
     return (
         <section className='landing' id='#home'>
             <div className='landing-imgWrapper'>
-                <img src={LandingSVG} className='landing__img' alt='Landing image' />
+                <img src={LandingSVG} className='landing__img' alt='Landing' />
             </div>
             <Title />
             <p className='landing__description'>
