@@ -1,9 +1,10 @@
 .burger {
     background-color: transparent;
     border: none;
-    border-radius: $default-radius;
+    border-radius: .375rem;
     padding: .6em .5em .5em .5em;
     cursor: pointer;
+    transition: $transition-nav;
     
     &__img {
         width: 21px;

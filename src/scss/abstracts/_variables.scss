@@ -14,12 +14,16 @@ $default-btn-padding: 10px 25px;
 $lowercase-btn-font-size: 15px;
 $uppercase-btn-font-size: 14px;
 $default-btn-shadow: 2px 5px 5px rgba(33,33,33,.2);
+$btn-radius: 5px;
 
 /* GENERAL MEASUREMENTS */
 $narrow-letter-spacing: -.02em;
 $wide-letter-spacing: .1em;
-$default-radius: 5px;
+$default-radius: .375rem;
 
 /* TYPOGRAPHY */
 $font-poppins: 'Poppins', Arial, Helvetica, sans-serif;
 $font-inter: 'Inter', 'Poppins', Arial, Helvetica, sans-serif;
+
+/* GENERAL USE */
+$transition-nav: all .1s ease-in-out;
