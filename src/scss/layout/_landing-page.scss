@@ -1,0 +1,54 @@
+.landing {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 76px);
+    background-color: $light-purple;
+    font-family: $font-inter;
+
+    &-imgWrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+        padding-left: 25px;
+        padding-right: 35px;
+    }
+
+    &-titleWrapper {
+        margin: 15px 25px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 48px;
+        letter-spacing: -.02em;
+        color: $black;
+    }
+
+    &__subtitle {
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: -.02em;
+        color: $purple;
+    }
+
+    &__description {
+        margin-left: 25px;
+        margin-right: 25px;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: -.02em;
+        color: #686666;
+    }
+
+    &-btnWrapper {
+        margin-top: 15px;
+        margin-left: 25px;
+    }
+}
