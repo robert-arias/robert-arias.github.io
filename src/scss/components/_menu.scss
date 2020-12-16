@@ -19,9 +19,9 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding-right: 1.25rem;
+        padding-right: calc(1.25rem - .5rem);
         padding-left: 1.25rem;
-        padding-top: 1rem;
+        padding-top: .5rem;
     }
 
     &__closeBtn {
@@ -54,7 +54,7 @@
     }
 
     &-listWrapper {
-        padding: .2rem 1.25rem 1rem 1.25rem;
+        padding: .2rem 1.25rem .5rem 1.25rem;
     }
 
     &__list {
@@ -68,7 +68,7 @@
         transition: $transition-nav;
 
         &:not(:last-child) {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         &:hover {
@@ -88,6 +88,12 @@
             color: $dark-purple;
         }
     }
+}
+
+@media screen and (min-width: 768px) {
+    // .menu-wrapper {
+    //     display: none;
+    // }
 }
 
 // #f9fafb

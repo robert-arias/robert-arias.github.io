@@ -13,11 +13,54 @@
     }
 }
 
-/* TABLETS */
-@media screen and (min-width: 768px) {
+// @media screen and (min-width: 768px) {
+
+// }
+
+@media screen and (min-width: 1024px) {
     .nav {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+
         &__list {
-            display: block;
+            display: inline-block;
+            font-family: $font-inter;
+            font-weight: 500;
+            font-size: 15px;
+            list-style: none;
         }
+
+        &__item {
+            display: inline-block;
+            border-radius: $default-radius;
+            
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+
+            &:hover {
+                background-color: #e0e6f7;
+            }
+        }
+
+        &__link {
+            display: inline-block;
+            padding: 10px 25px;
+            text-decoration: none;
+            color: $purple;
+            letter-spacing: .05em;
+
+            &--selected {
+                font-weight: 800;
+                /*border-bottom: 2px solid $purple; THINK IT THROUGH. IT DOESN'T LOOK SO GOOD.
+                border-radius: $default-radius;*/
+            }   
+        }
+    }
+}
+
+@media screen and (min-width: 1224px) {
+    .nav {
+        padding-right: 5rem;
     }
 }
