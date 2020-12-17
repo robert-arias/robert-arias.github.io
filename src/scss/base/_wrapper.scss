@@ -1,0 +1,8 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr calc(min(65ch, 100%)) 1fr; //Sass error if min() with different units; we add calc() to make it work.
+
+    & > * {
+        grid-column: 2;
+    }
+}

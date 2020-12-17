@@ -2,13 +2,16 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: calc(100vh - 76px);
+    //height: calc(100vh - 76px);
     background-color: $light-purple;
     font-family: $font-inter;
 
     &-imgWrapper {
         display: flex;
         justify-content: center;
+        align-items: flex-start;
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 
     &__img {
@@ -50,5 +53,91 @@
     &-btnWrapper {
         margin-top: 15px;
         margin-left: 25px;
+        margin-bottom: 35px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .landing {
+        display: grid;
+        grid-template-columns: 1fr 55ch 1fr;
+
+        & > * {
+            grid-column: 2;
+        }
+
+        &__title {
+            font-size: 44px;
+        }
+
+        &__subtitle {
+            font-size: 24px;
+            line-height: 26px;
+        }
+
+        &__description {
+            font-size: 16px;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .landing {
+        grid-template-columns: 1fr calc(min(120ch, 85%)) 1fr;
+        
+        &-wrapper {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            padding-top: 40px;
+            padding-bottom: 80px;
+        }
+
+        &-imgWrapper {
+            margin: 0;
+        }
+
+        &__img {
+            padding: 0;
+        }
+
+        &-infoWrapper {
+            max-width: 50%;
+            padding-top: 50px;
+        }
+
+        &-titleWrapper {
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 25px;
+        }
+
+        &__title {
+            font-size: 64px;
+            line-height: 77px;
+            font-weight: 800;
+        }
+
+        &__subtitle {
+            font-size: 26px;
+            line-height: 29px;
+            font-weight: 800;
+        }
+
+        &__description {
+            margin: 0;
+            font-size: 18px;
+            line-height: 26px;
+        }
+
+        &-btnWrapper {
+            margin-top: 25px;
+            margin-left: 0;
+            margin-bottom: 0;
+        }
+
+        & .btn {
+            font-size: 18px;
+        }
     }
 }

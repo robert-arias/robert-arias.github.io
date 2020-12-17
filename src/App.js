@@ -1,4 +1,4 @@
-import { Navigation } from './components/navigations/navigation';
+import { Navigation } from './components/navigation/navigation';
 import { Landing } from './sections/landing';
 function App() {
   return (
