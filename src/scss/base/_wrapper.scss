@@ -1,8 +1,21 @@
 .wrapper {
     display: grid;
-    grid-template-columns: 1fr calc(min(65ch, 100%)) 1fr; //Sass error if min() with different units; we add calc() to make it work.
+    grid-template-columns: 1fr calc(min(55ch, 100% - #{$mob-padding})) 1fr; //Sass error when min() with different units; we add calc() to make it work.
 
     & > * {
         grid-column: 2;
+        padding: 8rem 0;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .wrapper {
+        grid-template-columns: 1fr 75% 1fr; //Sass error when min() with different units; we add calc() to make it work.
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .wrapper {
+        grid-template-columns: 1fr 55% 1fr; //Sass error when min() with different units; we add calc() to make it work.
     }
 }

@@ -5,3 +5,52 @@
 body, html {
     font-family: $font-poppins;
 }
+
+.title {
+    text-align: center;
+    font-family: $font-inter;
+    font-weight: 800;
+    color: $black;
+
+    &--mini {
+        font-size: .9em;
+        text-transform: uppercase;
+        letter-spacing: .3em;
+        color: $purple;
+    }
+
+    &--big {
+        font-size: 1.7em;
+        margin-bottom: 25px;
+    }
+
+    &--sub {
+        display: inline-block;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: .15em;
+        margin: 0 auto 15px auto;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            background-color: $purple;
+            height: 2px;
+            width: 35px;
+        }
+    }
+}
+
+.paragraph {
+    font-weight: 300;
+    color: $grey;
+    line-height: 24px;
+    margin-bottom: 25px;
+
+    &--whitebg {
+        color: $light-grey;
+    }
+}

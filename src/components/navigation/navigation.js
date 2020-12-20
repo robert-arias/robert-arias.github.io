@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Burger } from './burger';
 import { Menu } from '../menu/menu';
 
-export function Navigation() {
+export default function Navigation() {
     const [openMenu, setOpenMenu] = useState(false);
     const navItems = [
         {
