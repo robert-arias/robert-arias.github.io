@@ -64,20 +64,17 @@
     .about {
         &-info {
             flex-direction: row;
+            justify-content: space-between;
         }
 
         &-profile,
         &-skills {
-            width: 50%;
+            width: 46.5%;
         }
 
         &-titleWrapper {
             justify-content: flex-start;
         }
-
-        // &-profile {
-        //     margin-right: 35px;
-        // }
 
         &-buttons {
             flex-direction: row;
