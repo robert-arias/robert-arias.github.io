@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    //height: calc(100vh - 76px);
     background-color: $light-purple;
     font-family: $font-inter;
 
@@ -30,7 +29,6 @@
         font-size: 40px;
         line-height: 48px;
         letter-spacing: -.02em;
-        color: $black;
     }
 
     &__subtitle {
@@ -53,7 +51,7 @@
     &-btnWrapper {
         margin-top: 15px;
         margin-left: 25px;
-        margin-bottom: 35px;
+        margin-bottom: 91px; //76px (nav) + 15px (imgWrapper)
     }
 }
 
@@ -83,14 +81,15 @@
 
 @media screen and (min-width: 1024px) {
     .landing {
+        height: calc(100vh - 76px);
         grid-template-columns: 1fr calc(min(120ch, 85%)) 1fr;
+        align-items: center;
         
         &-wrapper {
             display: flex;
             flex-direction: row-reverse;
             justify-content: space-between;
-            padding-top: 40px;
-            padding-bottom: 80px;
+            padding-bottom: 50px;
         }
 
         &-imgWrapper {

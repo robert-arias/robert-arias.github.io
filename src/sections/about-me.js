@@ -51,7 +51,7 @@ export default function AboutMe() {
             </p>
             <section className='about-info'>
                 <div className='about-profile'>
-                    <div className='about-profile-titleWrapper'>
+                    <div className='about-titleWrapper'>
                         <h3 className='title title--sub'>Profile</h3>
                     </div>
                     <p className='paragraph'>
@@ -62,7 +62,7 @@ export default function AboutMe() {
                     </ul>
                 </div>
                 <div className='about-skills'>
-                    <div className='about-profile-titleWrapper'>
+                    <div className='about-titleWrapper'>
                         <h3 className='title title--sub'>Skills</h3>
                     </div>
                     <p className='paragraph'>

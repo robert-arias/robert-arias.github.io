@@ -4,13 +4,13 @@
 
 body, html {
     font-family: $font-poppins;
+    color: $black;
 }
 
 .title {
     text-align: center;
     font-family: $font-inter;
     font-weight: 800;
-    color: $black;
 
     &--mini {
         font-size: .9em;
@@ -29,7 +29,7 @@ body, html {
         font-size: 18px;
         text-transform: uppercase;
         letter-spacing: .15em;
-        margin: 0 auto 15px auto;
+        margin-bottom: 15px;
         position: relative;
 
         &::after {
@@ -52,5 +52,21 @@ body, html {
 
     &--whitebg {
         color: $light-grey;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .title {
+        &--mini {
+            font-size: 1.2em;
+        }
+
+        &--big {
+            font-size: 2em;
+        }
+    }
+
+    .paragraph {
+        font-size: 18px;
     }
 }

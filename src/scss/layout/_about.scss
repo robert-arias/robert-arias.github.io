@@ -16,7 +16,6 @@
         }
     
         &__strong {
-            color: $black;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -31,11 +30,11 @@
             color: $grey;
             font-weight: 300;
         }
+    }
 
-        &-titleWrapper {
-            display: flex;
-            justify-content: center;
-        }
+    &-titleWrapper {
+        display: flex;
+        justify-content: center;
     }
 
     &-skills {
@@ -57,6 +56,40 @@
 
         & > *:not(:last-child) {
             margin-bottom: 15px;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .about {
+        &-info {
+            flex-direction: row;
+        }
+
+        &-profile,
+        &-skills {
+            width: 50%;
+        }
+
+        &-titleWrapper {
+            justify-content: flex-start;
+        }
+
+        // &-profile {
+        //     margin-right: 35px;
+        // }
+
+        &-buttons {
+            flex-direction: row;
+            justify-content: space-between;
+            
+            & > * {
+                width: 47.5%;
+            }
+
+            & > *:not(:last-child) {
+                margin-bottom: 0;
+            }
         }
     }
 }
