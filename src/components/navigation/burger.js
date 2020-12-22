@@ -4,8 +4,8 @@
 */
 export function DefaultBurger() {
     return (
-        <div class="default-burger">
-            <div class="default-burger__line"></div>
+        <div className="default-burger">
+            <div className="default-burger__line"></div>
         </div>
     );
 }

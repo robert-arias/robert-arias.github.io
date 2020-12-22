@@ -6,16 +6,33 @@
         grid-column: 2;
         padding: 8rem 0;
     }
+
+    &:nth-child(even) {
+        background-color: $light-purple;
+    }
+
+    &--title {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 @media screen and (min-width: 1024px) {
     .wrapper {
-        grid-template-columns: 1fr 75% 1fr; //Sass error when min() with different units; we add calc() to make it work.
+        grid-template-columns: 1fr 75% 1fr;
+
+        &--title {
+            justify-content: flex-start;
+
+            &--center {
+                justify-content: center;
+            }
+        }
     }
 }
 
 @media screen and (min-width: 1440px) {
     .wrapper {
-        grid-template-columns: 1fr 55% 1fr; //Sass error when min() with different units; we add calc() to make it work.
+        grid-template-columns: 1fr 55% 1fr; 
     }
 }

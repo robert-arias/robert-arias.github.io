@@ -44,40 +44,42 @@ export default function AboutMe() {
     ];
 
     return (
-        <article className='about' id='about'>
-            <ArticleTitles sectionTitle='About me' mainTitle='Let me introduce myself.' />
-            <p className='paragraph'
-                >Hi! I'm Robert Arias, a software developer. I recently finished my major at Universidad de Costa Rica, Sede del Pacífico. I was finishing my Bachelor's degree in Informática Empresarial. I consider myself to be a responsible, dynamic, and proactive person. I adapt with ease to any situation, and I am great at teamwork.
-            </p>
-            <section className='about-info'>
-                <div className='about-profile'>
-                    <div className='about-titleWrapper'>
-                        <h3 className='title title--sub'>Profile</h3>
-                    </div>
-                    <p className='paragraph'>
-                        Software developer graduated from Universidad de Costa Rica, Sede del Pacífico. Majored in Informática Empresarial.
+        <div className='wrapper'>
+            <article className='about' id='about'>
+                <ArticleTitles sectionTitle='About me' mainTitle='Let me introduce myself.' />
+                <p className='paragraph'>
+                    Hi! I'm Robert Arias, a software developer. I recently finished my major at Universidad de Costa Rica, Sede del Pacífico. I was finishing my Bachelor's degree in Informática Empresarial. I consider myself to be a responsible, dynamic, and proactive person. I adapt with ease to any situation, and I am great at teamwork.
+                </p>
+                <section className='about-info'>
+                    <div className='about-profile'>
+                        <div className='wrapper--title'>
+                            <h3 className='title title--sub'>Profile</h3>
+                        </div>
+                        <p className='paragraph'>
+                            Software developer graduated from Universidad de Costa Rica, Sede del Pacífico. Majored in Informática Empresarial.
                     </p>
-                    <ul className='about-profile__list'>
-                        <ProfileItems items={ProfItems}/>
-                    </ul>
-                </div>
-                <div className='about-skills'>
-                    <div className='about-titleWrapper'>
-                        <h3 className='title title--sub'>Skills</h3>
+                        <ul className='about-profile__list'>
+                            <ProfileItems items={ProfItems} />
+                        </ul>
                     </div>
-                    <p className='paragraph'>
-                        Throughout my major, as well as on a personal level, I have learned the necessary skills for creating software. Some of them are:
+                    <div className='about-skills'>
+                        <div className='wrapper--title'>
+                            <h3 className='title title--sub'>Skills</h3>
+                        </div>
+                        <p className='paragraph'>
+                            Throughout my major, as well as on a personal level, I have learned the necessary skills for creating software. Some of them are:
                     </p>
-                    <ul className='about-skills__list'>
-                        <SkillItems items={SkItems} />
-                    </ul>
+                        <ul className='about-skills__list'>
+                            <SkillItems items={SkItems} />
+                        </ul>
+                    </div>
+                </section>
+                <div className='about-buttons'>
+                    <MainButton link_to='#contact' title='Hire me' />
+                    <SecondaryButton link_to={CV} title='Download CV' isTarget='__blank' />
                 </div>
-            </section>
-            <div class='about-buttons'>
-                <MainButton link_to='#contact' title='Hire me'/>
-                <SecondaryButton link_to={CV} title='Download CV' isTarget='__blank' />
-            </div>
-        </article>
+            </article>
+        </div>
     );
 }
 
