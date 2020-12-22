@@ -24,6 +24,32 @@ export default function Resume() {
             'description': <>As part of my degree, I have to acquire experience through an internship. I have the opportunity to work as an intern at <a href='https://www.knogin.com/' target='__blank' className='item__link'>Knogin</a>, where I participated in multiple projects as a full-stack software developer.</>
         }
     ]
+    const skillItems = [
+        {
+            'skill': 'Programming languages',
+            'items': ['C#', 'JavaScript', 'Java', 'PHP', 'Python']
+        },
+        {
+            'skill': 'Frameworks',
+            'items': ['React.js', 'ASP.NET Core', 'Node.js', 'Express']
+        },
+        {
+            'skill': 'DB Management Systems',
+            'items': ['MySQL', 'Oracle SQL Developer', 'Microsoft SQL Server']
+        },
+        {
+            'skill': 'Query languages',
+            'items': ['SQL', 'PL/SQL', 'Transact-SQL']
+        },
+        {
+            'skill': 'Web development',
+            'items': ['HTML', 'CSS', 'SASS', 'Bootstrap', 'Tailwind CSS']
+        },
+        {
+            'skill': 'Software and tools',
+            'items': ['Git', 'MS Office', 'Latex']
+        }
+    ];
 
     return (
         <div className='wrapper'>
@@ -34,99 +60,40 @@ export default function Resume() {
                 </p>
                 <Timeline title='Education' iconClass='fa fa-graduation-cap' timelineItems={educationItems} />
                 <Timeline title='Experience' iconClass='fas fa-business-time' timelineItems={experienceItems} />
-                <section className='resume-skills'>
-                    <h3 className='resume-skills__title'>Skills</h3>
-                    <div className='resume-skills-information-container'>
-                        <div className='resume-skills-information resume-skills-information--1'>
-                            <h4 className='resume-skills-information__title'>Programming languages</h4>
-                            <ul className='resume-skills-information__list'>
-                                <li className='resume-skills-information__item'>
-                                    <i className='resume-skills-information__icon fas fa-check-circle'></i>Java
-                                    </li>
-                                <li className='resume-skills-information__item'>
-                                    <i className='resume-skills-information__icon fas fa-check-circle'></i>C#
-                                    </li>
-                                <li className='resume-skills-information__item'>
-                                    <i className='resume-skills-information__icon fas fa-check-circle'></i>JavaScript
-                                    </li>
-                                <li className='resume-skills-information__item'>
-                                    <i className='resume-skills-information__icon fas fa-check-circle'></i>Python
-                                    </li>
-                            </ul>
-                        </div>
-                        <div className='resume-skills-information resume-skills-information--2'>
-                            <h4 className='resume-skills-information__title'>Frameworks</h4>
-                            <ul className='resume-skills-information__list'>
-                                <li className='resume-skills-information__item'>
-                                    <i className='resume-skills-information__icon fas fa-check-circle'></i>Express
-                                    </li>
-                                <li className='resume-skills-information__item'>
-                                    <i className='resume-skills-information__icon fas fa-check-circle'></i>.NET
-                                    </li>
-                                <li className='resume-skills-information__item'>
-                                    <i className='resume-skills-information__icon fas fa-check-circle'></i>ASP.NET
-                                    </li>
-                            </ul>
-                        </div>
-                        <div className='resume-skills-information resume-skills-information--3'>
-                            <h4 className='resume-skills-information__title'>DB Managament Systems</h4>
-                            <ul className='resume-skills-information__list'>
-                                <li className='resume-skills-information__item'>
-                                    <i className='resume-skills-information__icon fas fa-check-circle'></i>MySQL
-                                    </li>
-                                <li className='resume-skills-information__item'>
-                                    <i className='resume-skills-information__icon fas fa-check-circle'></i>Oracle SQL Developer
-                                    </li>
-                                <li className='resume-skills-information__item'>
-                                    <i className='resume-skills-information__icon fas fa-check-circle'></i>Microsoft SQL Server
-                                    </li>
-                            </ul>
-                        </div>
-                        <div className='resume-skills-information resume-skills-information--4'>
-                            <h4 className='resume-skills-information__title'>Query languages</h4>
-                            <ul className='resume-skills-information__list'>
-                                <li className='resume-skills-information__item'>
-                                    <i className='resume-skills-information__icon fas fa-check-circle'></i>SQL
-                                    </li>
-                                <li className='resume-skills-information__item'>
-                                    <i className='resume-skills-information__icon fas fa-check-circle'></i>PL/SQL
-                                    </li>
-                                <li className='resume-skills-information__item'>
-                                    <i className='resume-skills-information__icon fas fa-check-circle'></i>Transact-SQL
-                                    </li>
-                            </ul>
-                        </div>
-                        <div className='resume-skills-information resume-skills-information--5'>
-                            <h4 className='resume-skills-information__title'>Web development</h4>
-                            <ul className='resume-skills-information__list'>
-                                <li className='resume-skills-information__item'>
-                                    <i className='resume-skills-information__icon fas fa-check-circle'></i>HTML
-                                    </li>
-                                <li className='resume-skills-information__item'>
-                                    <i className='resume-skills-information__icon fas fa-check-circle'></i>CSS
-                                    </li>
-                                <li className='resume-skills-information__item'>
-                                    <i className='resume-skills-information__icon fas fa-check-circle'></i>SASS
-                                    </li>
-                            </ul>
-                        </div>
-                        <div className='resume-skills-information resume-skills-information--6'>
-                            <h4 className='resume-skills-information__title'>Software and tools</h4>
-                            <ul className='resume-skills-information__list'>
-                                <li className='resume-skills-information__item'>
-                                    <i className='resume-skills-information__icon fas fa-check-circle'></i>Git
-                                    </li>
-                                <li className='resume-skills-information__item'>
-                                    <i className='resume-skills-information__icon fas fa-check-circle'></i>MS Office
-                                    </li>
-                                <li className='resume-skills-information__item'>
-                                    <i className='resume-skills-information__icon fas fa-check-circle'></i>Latex
-                                    </li>
-                            </ul>
-                        </div>
+                <section className='resume-skillsSection'>
+                    <div className='wrapper--title wrapper--title--center'>
+                        <h3 className='title title--sub'>Skills</h3>
+                    </div>
+                    <div className='resume-skillsWrapper'>
+                        <SkillSet skillItems={skillItems} />
                     </div>
                 </section>
             </article>
         </div>
     );
+}
+
+function SkillSet({ skillItems}) {
+    return <>
+            {
+                skillItems.map(skill => {
+                    return (
+                        <div className='resume-skills'>
+                            <h4 className='skills__title'>{skill.skill}</h4>
+                            <ul className='skills__list'>
+                                {
+                                    skill.items.map((item, index) => {
+                                        return (
+                                            <li key={index.toString()} className='skills__item'>
+                                                <i className='skills__icon fas fa-check-circle'></i>{item}
+                                            </li>
+                                        )
+                                    })
+                                }
+                            </ul>
+                        </div>
+                    )
+                })
+            }
+        </>;
 }

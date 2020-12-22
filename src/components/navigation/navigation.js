@@ -46,7 +46,7 @@ export default function Navigation() {
 }
 
 /* This is the items for the desktop version */
-function NavItems({ items, classBlock }) {
+function NavItems({ items, classBlock, changeMenu = null }) {
     const selectedClass = `${classBlock}__link--selected`;
     return (
         <ul className={`${classBlock}__list`}>
@@ -54,7 +54,7 @@ function NavItems({ items, classBlock }) {
                 items.map((item, index) => {
                     return (
                         <li key={index.toString()} className={`${classBlock}__item`}>
-                            <a href={item.link} className={`${classBlock}__link ${item.isSelected ? selectedClass : null }`}>{item.name}</a>
+                            <a href={item.link} className={`${classBlock}__link ${item.isSelected ? selectedClass : null }`} onClick={ changeMenu ? () => changeMenu() : null}>{item.name}</a>
                         </li>
                     )
                 })

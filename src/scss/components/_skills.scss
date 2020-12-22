@@ -1,0 +1,59 @@
+.skills {
+    &__title {
+        font-size: 16px;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        font-size: 14px;
+        font-weight: 300;
+        color: $grey;
+        text-align: center;
+
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+
+    &__icon {
+        color: $purple;
+        margin-right: 3px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .skills {
+        &__title {
+            font-size: 18px;
+        }
+
+        &__title,
+        &__item {
+            text-align: left;
+        }
+
+        &__list {
+            display: block;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .skills {
+        &__title {
+            font-size: 20px;
+        }
+
+        &__item {
+            font-size: 16px;
+        }
+    }
+}

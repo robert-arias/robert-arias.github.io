@@ -11,7 +11,7 @@ export function Menu({ items, changeMenu, NavItems }) {
                     </button>
                 </div>
                 <div className='menu-listWrapper'>
-                    <NavItems items={items} classBlock='menu' />
+                    <NavItems items={items} classBlock='menu' changeMenu={changeMenu} />
                 </div>
             </div>
         </div>

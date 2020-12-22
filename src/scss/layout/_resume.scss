@@ -1,0 +1,26 @@
+@import '../components/timeline';
+@import '../components/skills';
+
+.resume {
+    &-skills:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .resume {
+        &-skillsSection {
+            padding-left: 10%;
+        }
+        
+        &-skillsWrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+
+            & > :nth-child(odd) {
+                grid-column: 1 / 3;
+            }
+        }
+    }
+}
