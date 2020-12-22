@@ -1,4 +1,3 @@
-import { ArticleTitles } from '../components/titles/titles';
 import { Timeline } from '../components/timeline/timeline';
 
 export default function Resume() {
@@ -54,7 +53,8 @@ export default function Resume() {
     return (
         <div className='wrapper'>
             <article className='resume' id='resume'>
-                <ArticleTitles sectionTitle='Resumé' mainTitle='More of my credentials.' />
+                <h3 className='title title--mini'>Resumé</h3>
+                <h2 className='title title--big'>More of my credentials.</h2>
                 <p className='paragraph'>
                     To get a better idea about me, in this section, relevant information about my education, experience, and skills are detailed.
                 </p>

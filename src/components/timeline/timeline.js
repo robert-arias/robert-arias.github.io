@@ -12,27 +12,25 @@ export function Timeline({ title, timelineItems, iconClass }) {
 }
 
 function TimelineItem({ timelineItems, iconClass }) {
-    return (
-        <>
-            {
-                timelineItems.map(item => {
-                    return (
-                        <div className='timeline__item'>
-                            <div className='item__icon'>
-                                <i className={iconClass}></i>
-                            </div>
-                            <div className='item__header'>
-                                <h4 className='item__title'>{item.title}</h4>
-                                <p className='item__time'>{item.timeframe}</p>
-                            </div>
-                            <div className='item__content'>
-                                <h5 className='item__subtitle'>{item.subtitle}</h5>
-                                <p className='item__description'>{item.description}</p>
-                            </div>
+    return <>
+        {
+            timelineItems.map(item => {
+                return (
+                    <div className='timeline__item'>
+                        <div className='item__icon'>
+                            <i className={iconClass}></i>
                         </div>
-                    )
-                })
-            }
-        </>
-    );
+                        <div className='item__header'>
+                            <h4 className='item__title'>{item.title}</h4>
+                            <p className='item__time'>{item.timeframe}</p>
+                        </div>
+                        <div className='item__content'>
+                            <h5 className='item__subtitle'>{item.subtitle}</h5>
+                            <p className='item__description'>{item.description}</p>
+                        </div>
+                    </div>
+                )
+            })
+        }
+    </>;
 }

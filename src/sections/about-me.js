@@ -1,4 +1,3 @@
-import { ArticleTitles } from '../components/titles/titles';
 import { MainButton, SecondaryButton } from '../components/buttons/buttons';
 import CV from '../cv/robert-cv.pdf';
 
@@ -46,7 +45,8 @@ export default function AboutMe() {
     return (
         <div className='wrapper'>
             <article className='about' id='about'>
-                <ArticleTitles sectionTitle='About me' mainTitle='Let me introduce myself.' />
+                <h3 className='title title--mini'>About me</h3>
+                <h2 className='title title--big'>Let me introduce myself.</h2>
                 <p className='paragraph'>
                     Hi! I'm Robert Arias, a software developer. I recently finished my major at Universidad de Costa Rica, Sede del Pacífico. I was finishing my Bachelor's degree in Informática Empresarial. I consider myself to be a responsible, dynamic, and proactive person. I adapt with ease to any situation, and I am great at teamwork.
                 </p>
@@ -84,35 +84,31 @@ export default function AboutMe() {
 }
 
 function SkillItems({ items }) {
-    return (
-        <>
-            {
-                items.map((item, index) => {
-                    return (
-                        <li key={index.toString()} className='about-skills__item'>
-                            <i className='about-skills__icon fas fa-check-circle'></i>
-                            <b className='about-skills__strong'>{item.language}</b>
-                        </li>
-                    )
-                })
-            }
-        </>
-    );
+    return <>
+        {
+            items.map((item, index) => {
+                return (
+                    <li key={index.toString()} className='about-skills__item'>
+                        <i className='about-skills__icon fas fa-check-circle'></i>
+                        <b className='about-skills__strong'>{item.language}</b>
+                    </li>
+                )
+            })
+        }
+    </>;
 }
 
 function ProfileItems({ items }) {
-    return (
-        <>
-            {
-                items.map((item, index) => {
-                    return (
-                        <li key={index.toString()} className='about-profile__item'>
-                            <b className='about-profile__strong'>{item.title}:</b>
-                            <span className='about-profile__span'>{item.value}</span>
-                        </li>
-                    )
-                })
-            }
-        </>
-    );
+    return <>
+        {
+            items.map((item, index) => {
+                return (
+                    <li key={index.toString()} className='about-profile__item'>
+                        <b className='about-profile__strong'>{item.title}:</b>
+                        <span className='about-profile__span'>{item.value}</span>
+                    </li>
+                )
+            })
+        }
+    </>;
 }
