@@ -1,0 +1,55 @@
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 25px;
+
+    &__card {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        border-radius: $default-radius;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -1px rgba(0,0,0,.06);
+    }
+}
+
+.card {
+    &__img > img {
+        width: 100%;
+        height: auto;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 15px;
+        padding-top: 10px;
+    }
+
+    &__link {
+        text-decoration: none;
+        transition: all .2s linear;
+
+        &:hover {
+            color: $purple;
+        }
+    }
+
+    &__title {
+        color: $purple;
+        transition: all .2s linear;
+
+        &:hover {
+            color: $dark-purple;
+        }
+    }
+
+    &__subtitle {
+        font-size: 12px;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: .15em;
+        color: $black;
+    }
+}
