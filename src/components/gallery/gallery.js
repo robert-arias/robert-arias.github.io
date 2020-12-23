@@ -4,17 +4,15 @@ export function Gallery({ galleryItems }) {
             {
                 galleryItems.map(item => {
                     return (
-                        <div className='gallery__card'>
-                            <a href={item.link} target='__blank' className='card__link--img' >
-                                <div className='card__img'>
-                                    <img src={item.img} alt={item.title} />
-                                </div>
+                        <div className='card'>
+                            <a href={item.link} target='__blank' className='card__img' >
+                                <img src={item.img} alt={item.title} />
                             </a>
                             <div className='card__info'>
                                 <a href={item.link} target='__blank' className='card__link' >
                                     <h3 className='card__title'>{item.title}</h3>
+                                    <p className='card__subtitle'>{item.subtitle}</p>
                                 </a>
-                                <p className='card__subtitle'>{item.subtitle}</p>
                             </div>
                         </div>
                     )
