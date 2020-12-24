@@ -29,7 +29,7 @@ export default function Contact() {
         if (!message)
             errors.push('Message field is required.');
 
-        if (!errors.length > 0) {
+        if (errors.length == 0) {
             console.log('no errors')
         }
         console.log(errors);
