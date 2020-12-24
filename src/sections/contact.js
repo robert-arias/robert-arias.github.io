@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FormButton } from '../components/buttons/buttons';
+import { callApi } from '../services/ApiService';
 
 export default function Contact() {
     const [fullName, setFullName] = useState('');
@@ -8,30 +9,39 @@ export default function Contact() {
     const [message, setMessage] = useState('');
     const [errorMessages, setErrorMessages] = useState([]);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async e => {
         e.preventDefault();
 
         let errors = [];
 
-        if(!fullName) {
+        if(!fullName || fullName.trim().length === 0) {
             errors.push('Full name field is required.');
         }
         
-        if(!email)
+        if(!email || fullName.trim().length === 0)
             errors.push('Email field is required.');
         else if(!emailValidation(email))
             errors.push('Email is invalid. Enter a valid email.');
         
-        if (!subject)
+        if (!subject || fullName.trim().length === 0)
             errors.push('Subject field is required.');
         
-        if (!message)
+        if (!message || fullName.trim().length === 0)
             errors.push('Message field is required.');
 
         if (errors.length === 0) {
-            console.log('no errors')
+            const data = {
+                'name': fullName,
+                'email': email,
+                'subject': subject,
+                'message': message
+            };
+
+            const result = await callApi(data);
+            if (result.ok) {
+                console.log('hurray!')
+            }
         }
-        console.log(errors);
         setErrorMessages(errors);
     }
 
