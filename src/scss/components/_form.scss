@@ -1,8 +1,4 @@
 .form {
-    & button {
-        margin-top: 30px;
-    }
-
     &-container {
         position: relative;
         margin-bottom: 10px;
@@ -59,5 +55,14 @@
         &--message {
             top: 15%
         }
+    }
+
+    &-loadingWrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__spinner {
+        width: 80px;
     }
 }

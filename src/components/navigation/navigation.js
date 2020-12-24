@@ -4,6 +4,7 @@ import { Menu } from '../menu/menu';
 
 export default function Navigation() {
     const [openMenu, setOpenMenu] = useState(false);
+    const [isClosing, setIsClosing] = useState(false);
     const navItems = [
         {
             name: 'Home',
@@ -32,15 +33,25 @@ export default function Navigation() {
         }
     ];
 
-    const changeMenu = () => {
-        setOpenMenu(!openMenu);
+    const delay = ms => new Promise(res => setTimeout(res, ms));
+
+    const changeMenu = async () => {
+        if(!openMenu) {
+            setOpenMenu(!openMenu);
+        }
+        else {
+            setIsClosing(true);
+            await delay(800);
+            setOpenMenu(!openMenu);
+            setIsClosing(false);
+        }
     };
 
     return (
         <nav className='nav'>
             <Burger type='button' onClick={() => changeMenu()} />
             <NavItems items={navItems} classBlock='nav' />
-            { openMenu ? (<Menu items={navItems} changeMenu={changeMenu} NavItems={NavItems} />) : null }
+            { openMenu ? (<Menu items={navItems} changeMenu={changeMenu} NavItems={NavItems} isClosing={isClosing} />) : null }
         </nav>
     );
 }

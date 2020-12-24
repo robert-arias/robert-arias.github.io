@@ -18,6 +18,10 @@
         &:hover {
             background-color: $dark-purple;
         }
+
+        &:active {
+            background-color: #2a4593;
+        }
     }
 
     &--main-icon {
@@ -40,10 +44,18 @@
         &:hover {
             background-color: $purple-quaternary;
         }
+
+        &:active {
+            background-color: #C6CEEA;
+        }
     }
 
     &--formBtn {
         border: none;
         width: 100%;
+
+        &:active {
+            background-color: #2a4593;
+        }
     }
 }

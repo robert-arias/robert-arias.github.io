@@ -1,8 +1,8 @@
 /* Menu for mobile version */
-export function Menu({ items, changeMenu, NavItems }) {
+export function Menu({ items, changeMenu, NavItems, isClosing }) {
     return (
         <div className='menu-wrapper'>
-            <div className='menu'>
+            <div className={`menu ${isClosing ? `scale-out-tr` : `scale-in-tr`}`}>
                 <div className='menu-closeWrapper'>
                     <button className='menu__closeBtn' type='button' onClick={() => changeMenu()}>
                         <svg className='menu__closeImg' stroke="currentColor" fill="none" viewBox="0 0 24 24">

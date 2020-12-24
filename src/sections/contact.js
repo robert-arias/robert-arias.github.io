@@ -1,35 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FormButton } from '../components/buttons/buttons';
 import { callApi } from '../services/ApiService';
+import Spinner from '../assets/spinner.svg';
 
 export default function Contact() {
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
-    const [errorMessages, setErrorMessages] = useState([]);
+    const [alertMessages, setAlertMessages] = useState([]);
+    const [isLoading, setLoading] = useState(false);
 
     const handleSubmit = async e => {
         e.preventDefault();
 
-        let errors = [];
+        setLoading(true);
+        setAlertMessages([]);
+
+        let messages = [];
 
         if(!fullName || fullName.trim().length === 0) {
-            errors.push('Full name field is required.');
+            messages.push('Full name field is required.');
         }
         
-        if(!email || fullName.trim().length === 0)
-            errors.push('Email field is required.');
+        if(!email || email.trim().length === 0)
+            messages.push('Email field is required.');
         else if(!emailValidation(email))
-            errors.push('Email is invalid. Enter a valid email.');
+            messages.push('Email is invalid. Enter a valid email.');
         
-        if (!subject || fullName.trim().length === 0)
-            errors.push('Subject field is required.');
+        if (!subject || subject.trim().length === 0)
+            messages.push('Subject field is required.');
         
-        if (!message || fullName.trim().length === 0)
-            errors.push('Message field is required.');
+        if (!message || message.trim().length === 0)
+            messages.push('Message field is required.');
 
-        if (errors.length === 0) {
+        if (messages.length === 0) {
             const data = {
                 'name': fullName,
                 'email': email,
@@ -38,11 +43,24 @@ export default function Contact() {
             };
 
             const result = await callApi(data);
+
             if (result.ok) {
-                console.log('hurray!')
+                messages.push('Form sent successfully! 🎉');
+                messages.push(true);
+
+                setFullName('');
+                setEmail('');
+                setSubject('');
+                setMessage('');
+            } else {
+                messages.push('An error has ocurred. Try again.');
+                messages.push(false);
             }
         }
-        setErrorMessages(errors);
+        else
+            messages.push(false);
+        setAlertMessages(messages);
+        setLoading(false);
     }
 
     const emailValidation = (email) => {
@@ -50,9 +68,9 @@ export default function Contact() {
     }
 
     const hideAlert = (index) => {
-        let errors = [...errorMessages];
+        let errors = [...alertMessages];
         errors.splice(index, 1);
-        setErrorMessages(errors);
+        setAlertMessages(errors);
     }
 
     return (
@@ -81,25 +99,38 @@ export default function Contact() {
                         <label className='form__label form__label--message' htmlFor='message'>Message</label>
                     </div>
                     {
-                        errorMessages.length > 0 ? <ErrorAlerts errorMessages={errorMessages} hideAlert={hideAlert} /> : null
+                        alertMessages.length > 0 ? <Alerts messages={alertMessages} hideAlert={hideAlert} /> : null
                     }
-                    <FormButton buttonName='Submit' />
+                    {
+                        !isLoading ? <FormButton buttonName='Submit' /> : 
+                        (<div className='form-loadingWrapper'>
+                            <img className='form__spinner' src={Spinner} alt='Loading animation' />
+                        </div>)
+                    }
                 </form>
             </article>
         </div>
     );
 }
 
-function ErrorAlerts({ errorMessages, hideAlert }) {
+function Alerts({ messages, hideAlert }) {
+    const [alertType, setAlertType] = useState();
+
+    useEffect(() => {
+        setAlertType(messages[messages.length - 1]);
+    }, [messages])
+
     return <>
         {
-            errorMessages.map((error, index) => {
-                return (
-                    <div className='alert' key={index.toString()}>
-                        <span className='alert__closeBtn' onClick={() => hideAlert(index) }>&times;</span>
-                        {error}
-                    </div>
-                )
+            messages.map((message, index) => {
+                if (index < messages.length - 1) {
+                    return (
+                        <div className={`alert alert--${alertType ? `success` : `danger`} slide-in-top`} key={index.toString()}>
+                            <span className='alert__closeBtn' onClick={() => hideAlert(index) }>&times;</span>
+                            {message}
+                        </div>
+                    )
+                }
             })
         }
     </>;
