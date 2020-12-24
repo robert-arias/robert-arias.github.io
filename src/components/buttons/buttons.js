@@ -12,3 +12,9 @@ export function SecondaryButton({ link_to, title, isTarget = null }) {
         <a href={link_to} className={'btn btn--secondary'} target={isTarget} >{title}</a>
     );
 }
+
+export function FormButton({ buttonName }) {
+    return (
+        <button className='btn btn--main btn--formBtn'>{buttonName}</button>
+    );
+}

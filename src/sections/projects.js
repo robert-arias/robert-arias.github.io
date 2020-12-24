@@ -35,9 +35,9 @@ export default function Projects() {
         <div className='wrapper'>
             <article className='projects' id='projects'>
                 <h3 className='title title--mini'>Projects</h3>
-                <h2 className='title title--big'>Check out some of my works.</h2>
+                <h2 className='title title--big'>Check out some of my work.</h2>
                 <p className='paragraph'>
-                    These are some of the most memorable projects I've made, mostly in my time in college. Check them out.
+                    These are some of the most memorable projects I've made, mostly in my time in college. They are hosted on my <a href='https://github.com/robert-arias/' className='item__link' target='__blank'>GitHub repository</a>. Check them out.
                 </p>
                 <Gallery galleryItems={galleryItems} />
             </article>

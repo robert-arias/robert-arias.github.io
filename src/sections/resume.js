@@ -20,7 +20,7 @@ export default function Resume() {
             'title': 'Knogin S.A.',
             'timeframe': 'July 2020 - December 2020',
             'subtitle': 'Internship as Software Developer',
-            'description': <>As part of my degree, I have to acquire experience through an internship. I have the opportunity to work as an intern at <a href='https://www.knogin.com/' target='__blank' className='item__link'>Knogin</a>, where I participated in multiple projects as a full-stack software developer.</>
+            'description': <>As part of my degree, I have to acquire experience through an internship. I had the opportunity to work as an intern at <a href='https://www.knogin.com/' target='__blank' className='item__link'>Knogin</a>, where I participated in multiple projects as a full-stack software developer at the Development Department.</>
         }
     ]
     const skillItems = [
