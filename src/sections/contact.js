@@ -3,10 +3,10 @@ import { FormButton } from '../components/buttons/buttons';
 import $ from 'jquery';
 
 export default function Contact() {
-    const [fullName, setFullName] = useState();
-    const [email, setEmail] = useState();
-    const [subject, setSubject] = useState();
-    const [message, setMessage] = useState();
+    const [fullName, setFullName] = useState('');
+    const [email, setEmail] = useState('');
+    const [subject, setSubject] = useState('');
+    const [message, setMessage] = useState('');
     const [errorMessages, setErrorMessages] = useState([]);
 
     const handleSubmit = (e) => {
@@ -66,8 +66,7 @@ export default function Contact() {
                         <label className='form__label form__label--message' htmlFor='message'>Message</label>
                     </div>
                     {
-                        errorMessages.length > 0 ?
-                        <ErrorAlerts errorMessages={errorMessages} /> : null
+                        errorMessages.length > 0 ? <ErrorAlerts errorMessages={errorMessages} /> : null
                     }
                     <FormButton buttonName='Submit' />
                 </form>
@@ -77,10 +76,9 @@ export default function Contact() {
 }
 
 function ErrorAlerts({ errorMessages }) {
+
     const hideAlert = (element) => {
-        $(element.target).parent().css('display', 'none');
-        console.log(element.target);
-        //$(alertId).hide();
+        $(element).parent().hide();
     }
 
     return <>
@@ -88,7 +86,7 @@ function ErrorAlerts({ errorMessages }) {
             errorMessages.map((error, index) => {
                 return (
                     <div className='alert' key={index.toString()}>
-                        <span className='alert__closeBtn' onClick={(element) => hideAlert(element) }>&times;</span>
+                        <span className='alert__closeBtn' onClick={(element) => hideAlert(element.target) }>&times;</span>
                         {error}
                     </div>
                 )
