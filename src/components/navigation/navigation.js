@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Burger } from './burger';
 import { Menu } from '../menu/menu';
+import { Link } from 'react-scroll';
 
 export default function Navigation() {
     const [openMenu, setOpenMenu] = useState(false);
@@ -8,28 +9,23 @@ export default function Navigation() {
     const navItems = [
         {
             name: 'Home',
-            link: '#home',
-            isSelected: true
+            link: 'home',
         },
         {
             name: 'About me',
-            link: '#about',
-            isSelected: false
+            link: 'about',
         },
         {
             name: 'Resumé',
-            link: '#resume',
-            isSelected: false
+            link: 'resume',
         },
         {
             name: 'Projects',
-            link: '#projects',
-            isSelected: false
+            link: 'projects',
         },
         {
             name: 'Contact me',
-            link: '#contact',
-            isSelected: false
+            link: 'contact',
         }
     ];
 
@@ -65,7 +61,7 @@ function NavItems({ items, classBlock, changeMenu = null }) {
                 items.map((item, index) => {
                     return (
                         <li key={index.toString()} className={`${classBlock}__item`}>
-                            <a href={item.link} className={`${classBlock}__link ${item.isSelected ? selectedClass : null }`} onClick={ changeMenu ? () => changeMenu() : null}>{item.name}</a>
+                            <Link className={`${classBlock}__link`} activeClass={selectedClass} to={item.link} spy={true} smooth={true} offset={item.link === 'home' ? -76 : 0} duration={500} onClick={changeMenu ? () => changeMenu() : null} >{item.name}</Link>
                         </li>
                     )
                 })

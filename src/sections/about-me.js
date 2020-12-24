@@ -75,7 +75,7 @@ export default function AboutMe() {
                     </div>
                 </section>
                 <div className='about-buttons'>
-                    <MainButton link_to='#contact' title='Hire me' />
+                    <MainButton link_to='contact' title='Hire me' />
                     <SecondaryButton link_to={CV} title='Download CV' isTarget='__blank' />
                 </div>
             </article>

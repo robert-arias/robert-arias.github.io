@@ -13,6 +13,10 @@
     &__list {
         display: none;
     }
+
+    &__link {
+        cursor: pointer;
+    }
 }
 
 @media screen and (min-width: 1024px) {

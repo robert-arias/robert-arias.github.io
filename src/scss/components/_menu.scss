@@ -82,6 +82,7 @@
         border-radius: $default-radius;
         color: $purple;
         text-decoration: none;
+        cursor: pointer;
 
         &--selected {
             font-weight: 800;

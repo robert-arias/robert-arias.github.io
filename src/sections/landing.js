@@ -18,7 +18,7 @@ export default function Landing() {
                         Hi 👋! Welcome to my portfolio. I’m Robert Arias, a Costa Rican based software developer. Down below, you will find more about my credentials; general information about me if you’re interested. Thanks for checking it out.
                     </p>
                     <div className='landing-btnWrapper'>
-                        <MainButton link_to='#about' title='See more' img={ArrowSVG} />
+                        <MainButton link_to='about' title='See more' img={ArrowSVG} />
                     </div>
                 </div>
             </div>

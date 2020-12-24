@@ -131,6 +131,8 @@ function Alerts({ messages, hideAlert }) {
                         </div>
                     )
                 }
+                else
+                    return null
             })
         }
     </>;
