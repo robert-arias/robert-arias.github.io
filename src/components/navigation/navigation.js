@@ -61,7 +61,7 @@ function NavItems({ items, classBlock, changeMenu = null }) {
                 items.map((item, index) => {
                     return (
                         <li key={index.toString()} className={`${classBlock}__item`}>
-                            <Link className={`${classBlock}__link`} activeClass={selectedClass} to={item.link} spy={true} smooth={true} offset={item.link === 'home' ? -76 : 0} duration={500} onClick={changeMenu ? () => changeMenu() : null} >{item.name}</Link>
+                            <Link className={`${classBlock}__link`} activeClass={selectedClass} to={item.link} spy={true} smooth={true} offset={item.link === 'home' ? -76 : -70} duration={500} onClick={changeMenu ? () => changeMenu() : null} >{item.name}</Link>
                         </li>
                     )
                 })
