@@ -1,26 +1,29 @@
 import { MainButton, SecondaryButton } from '../components/buttons/buttons';
 import CV from '../cv/robert-cv.pdf';
+import { useTranslation } from 'react-i18next';
 
 export default function AboutMe() {
+	const { t } = useTranslation('about');
+
     const ProfItems = [
         {
-            title: 'Fullname',
+            title: t('fullNameTitle'),
             value: 'Robert Alonso Arias Castro'
         },
         {
-            title: 'Birth date',
-            value: 'July 07, 1999'
+            title: t('birthDateTitle'),
+            value: t('birthDateValue')
         },
         {
-            title: 'Major',
-            value: 'Bachelor\'s Degree in Informática Empresarial'
+            title: t('majorTitle'),
+            value: t('majorValue')
         },
         {
-            title: 'Github',
+            title: t('githubTitle'),
             value: 'www.github.com/robert-arias'
         },
         {
-            title: 'Email',
+            title: t('emailTitle'),
             value: 'robertariascastro@outlook.com'
         }
     ];
@@ -45,38 +48,32 @@ export default function AboutMe() {
     return (
         <div className='wrapper'>
             <article className='about' id='about'>
-                <h3 className='title title--mini'>About me</h3>
-                <h2 className='title title--big'>Let me introduce myself.</h2>
-                <p className='paragraph'>
-                    Hi! I'm Robert Arias, a software developer. I recently finished my major at Universidad de Costa Rica, Sede del Pacífico. I was finishing my Bachelor's degree in Informática Empresarial. I consider myself to be a responsible, dynamic, and proactive person. I adapt with ease to any situation, and I am great at teamwork.
-                </p>
+                <h3 className='title title--mini'>{t('sectionName')}</h3>
+                <h2 className='title title--big'>{t('title')}</h2>
+                <p className='paragraph'>{t('description')}</p>
                 <section className='about-info'>
                     <div className='about-profile'>
                         <div className='wrapper--title'>
-                            <h3 className='title title--sub'>Profile</h3>
+                            <h3 className='title title--sub'>{t('profileTitle')}</h3>
                         </div>
-                        <p className='paragraph'>
-                            Software developer graduated from Universidad de Costa Rica, Sede del Pacífico. Majored in Informática Empresarial.
-                    </p>
+                        <p className='paragraph'>{t('profileDescription')}</p>
                         <ul className='about-profile__list'>
                             <ProfileItems items={ProfItems} />
                         </ul>
                     </div>
                     <div className='about-skills'>
                         <div className='wrapper--title'>
-                            <h3 className='title title--sub'>Skills</h3>
+                            <h3 className='title title--sub'>{t('skillsTitle')}</h3>
                         </div>
-                        <p className='paragraph'>
-                            Throughout my major, as well as on a personal level, I have learned the necessary skills for creating software. Some of them are:
-                    </p>
+                        <p className='paragraph'>{t('skillsDescription')}</p>
                         <ul className='about-skills__list'>
                             <SkillItems items={SkItems} />
                         </ul>
                     </div>
                 </section>
                 <div className='about-buttons'>
-                    <MainButton link_to='contact' title='Hire me' />
-                    <SecondaryButton link_to={CV} title='Download CV' isTarget='__blank' />
+                    <MainButton link_to='contact' title={t('btnHire')} />
+                    <SecondaryButton link_to={CV} title={t('btnCV')} isTarget='__blank' />
                 </div>
             </article>
         </div>
