@@ -4,7 +4,7 @@ export default function Footer() {
     const { t } = useTranslation('footer');
 
     return (
-        <footer className='wrapper wrapper--footer'>
+        <footer className='wrapper--footer'>
             <div className='footer'>
                 <div className='footer-information'>
                     <i className='footer__icon fas fa-map-marker-alt'></i>

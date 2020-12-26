@@ -8,13 +8,19 @@
     }
 
     &--footer {
-        margin-top: -80px;
+        margin-top: -50px;
+        padding-top: 0;
+        padding-bottom: 0;
         & > * {
             padding: 0;
         }
     }
 
     &:nth-child(even) {
+        background-color: $light-purple;
+    }
+
+    &:last-child {
         background-color: $light-purple;
     }
 

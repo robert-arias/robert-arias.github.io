@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FormButton } from '../components/buttons/buttons';
+import Footer from '../components/footer/footer';
 import { callApi } from '../services/ApiService';
 import Spinner from '../assets/spinner.svg';
 import { useTranslation } from 'react-i18next';
@@ -109,6 +110,7 @@ export default function Contact() {
                     }
                 </form>
             </article>
+            <Footer />
         </div>
     );
 }
