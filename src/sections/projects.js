@@ -3,41 +3,44 @@ import NailGarden from '../assets/nail-garden.jpg';
 import MultiCare from '../assets/sistema-multicare.jpg';
 import Rosales from '../assets/farmacia-rosales.jpg';
 import ConnectFour from '../assets/connect-four.jpg';
+import { useTranslation } from 'react-i18next';
 
 export default function Projects() {
+    const { t } = useTranslation('projects');
+
     const galleryItems = [
         {
             'link': 'https://github.com/robert-arias/NailGarden',
-            'title': 'Nail Garden',
-            'subtitle': 'Multimedios',
+            'title': t('ng'),
+            'subtitle': t('ngDescription'),
             'img': NailGarden
         },
         {
             'link': 'https://github.com/robert-arias/MultiCare',
-            'title': 'Sistema MultiCare',
-            'subtitle': 'Análisis y Diseño de Sistemas',
+            'title': t('mc'),
+            'subtitle': t('mcDescription'),
             'img': MultiCare
         },
         {
             'link': 'https://github.com/robert-arias/FarmaciaRosales',
-            'title': 'Farmacia Rosales',
-            'subtitle': 'Administración de Base de Datos y Lenguajes Comerciales',
+            'title': t('fr'),
+            'subtitle': t('frDescription'),
             'img': Rosales
         },
         {
             'link': 'https://github.com/robert-arias/ConnectFour',
-            'title': 'Connect Four',
-            'subtitle': 'Hobby',
+            'title': t('cf'),
+            'subtitle': t('cfDescription'),
             'img': ConnectFour
         },
     ];
     return (
         <div className='wrapper'>
             <article className='projects' id='projects'>
-                <h3 className='title title--mini'>Projects</h3>
-                <h2 className='title title--big'>Check out some of my work.</h2>
+                <h3 className='title title--mini'>{t('sectionName')}</h3>
+                <h2 className='title title--big'>{t('title')}</h2>
                 <p className='paragraph'>
-                    These are some of the most memorable projects I've made, mostly in my time in college. They are hosted on my <a href='https://github.com/robert-arias/' className='item__link' target='__blank'>GitHub repository</a>. Check them out.
+                {t('description1')} <a href='https://github.com/robert-arias/' className='item__link' target='__blank'>{t('gh')}</a> {t('description2')}
                 </p>
                 <Gallery galleryItems={galleryItems} />
             </article>

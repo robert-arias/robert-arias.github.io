@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { FormButton } from '../components/buttons/buttons';
 import { callApi } from '../services/ApiService';
 import Spinner from '../assets/spinner.svg';
+import { useTranslation } from 'react-i18next';
 
 export default function Contact() {
+    const { t } = useTranslation(['resume', 'messages']);
+
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
@@ -19,20 +22,19 @@ export default function Contact() {
 
         let messages = [];
 
-        if(!fullName || fullName.trim().length === 0) {
-            messages.push('Full name field is required.');
-        }
+        if(!fullName || fullName.trim().length === 0)
+            messages.push(t('messages:efn'));
         
         if(!email || email.trim().length === 0)
-            messages.push('Email field is required.');
+            messages.push(t('messages:eem'));
         else if(!emailValidation(email))
-            messages.push('Email is invalid. Enter a valid email.');
+            messages.push(t('messages:eei'));
         
         if (!subject || subject.trim().length === 0)
-            messages.push('Subject field is required.');
+            messages.push(t('messages:esj'));
         
         if (!message || message.trim().length === 0)
-            messages.push('Message field is required.');
+            messages.push(t('messages:ems'));
 
         if (messages.length === 0) {
             const data = {
@@ -45,7 +47,7 @@ export default function Contact() {
             const result = await callApi(data);
 
             if (result.ok) {
-                messages.push('Form sent successfully! 🎉');
+                messages.push(t('messages:sfs'));
                 messages.push(true);
 
                 setFullName('');
@@ -53,7 +55,7 @@ export default function Contact() {
                 setSubject('');
                 setMessage('');
             } else {
-                messages.push('An error has ocurred. Try again.');
+                messages.push(t('messages:euk'));
                 messages.push(false);
             }
         }
@@ -76,27 +78,25 @@ export default function Contact() {
     return (
         <div className='wrapper'>
             <article className='contact' id='contact'>
-                <h3 className='title title--mini'>Contact me</h3>
-                <h2 className='title title--big'>I'd love to hear from you.</h2>
-                <p className='paragraph'>
-                    Thank you very much for checking my portfolio out 🥳! If you are interested in contacting me, you can do so through my social media, by email, or phone number. You can also send me a message if you fill out the form below.
-                </p>
+                <h3 className='title title--mini'>{t('contact:sectionName')}</h3>
+                <h2 className='title title--big'>{t('contact:title')}</h2>
+                <p className='paragraph'>{t('contact:description')}</p>
                 <form className='form' id='contactForm' onSubmit={handleSubmit}>
                     <div className='form-container'>
-                        <input className='form__input' type='text' value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder='Full name' />
-                        <label className='form__label' htmlFor='name'>Full name</label>
+                        <input className='form__input' type='text' value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder={t('contact:fn')} />
+                        <label className='form__label' htmlFor='name'>{t('contact:fn')}</label>
                     </div>
                     <div className='form-container'>
-                        <input className='form__input' type='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email' />
-                        <label className='form__label' htmlFor='email'>Email</label>
+                        <input className='form__input' type='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder={t('contact:em')} />
+                        <label className='form__label' htmlFor='email'>{t('contact:em')}</label>
                     </div>
                     <div className='form-container'>
-                        <input className='form__input' type='text' value={subject} onChange={(e) => setSubject(e.target.value)} placeholder='Subject' />
-                        <label className='form__label' htmlFor='subject'>Subject</label>
+                        <input className='form__input' type='text' value={subject} onChange={(e) => setSubject(e.target.value)} placeholder={t('contact:sj')} />
+                        <label className='form__label' htmlFor='subject'>{t('contact:sj')}</label>
                     </div>
                     <div className='form-container'>
-                        <textarea className='form__input form__input--message' rows='10' cols='40' placeholder='Message' value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
-                        <label className='form__label form__label--message' htmlFor='message'>Message</label>
+                        <textarea className='form__input form__input--message' rows='10' cols='40' placeholder={t('contact:ms')} value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
+                        <label className='form__label form__label--message' htmlFor='message'>{t('contact:ms')}</label>
                     </div>
                     {
                         alertMessages.length > 0 ? <Alerts messages={alertMessages} hideAlert={hideAlert} /> : null

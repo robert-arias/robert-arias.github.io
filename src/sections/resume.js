@@ -1,51 +1,54 @@
 import { Timeline } from '../components/timeline/timeline';
+import { useTranslation } from 'react-i18next';
 
 export default function Resume() {
+    const { t } = useTranslation('resume');
+    
     const educationItems = [
         {
-            'title': 'Universidad de Costa Rica',
-            'timeframe': '2017 - 2020',
-            'subtitle': 'Bachelor\'s Degree in Informática Empresarial',
-            'description': <>After obtaining my high school diploma, I enrolled at Universidad de Costa Rica, Sede del Pacífico to study Bachelor's Degree in Informática Empresarial. I complete the whole major in 4 years, finishing it in December 2020. For more information about this major, click <a href='https://www.srp.ucr.ac.cr/?q=docencia/bachillerato-en-inform%C3%A1tica-empresarial' target='__blank' className='item__link'>here</a>.</>
+            'title': t('ucr'),
+            'timeframe': t('ucrTime'),
+            'subtitle': t('ucrMajor'),
+            'description': <>{t('ucrDescription')} <a href='https://www.srp.ucr.ac.cr/?q=docencia/bachillerato-en-inform%C3%A1tica-empresarial' target='__blank' className='item__link'>{t('here')}</a>.</>
         },
         {
-            'title': 'Benemérito Liceo José Martí',
-            'timeframe': '2012 - 2016',
-            'subtitle': 'High School Diploma',
-            'description': 'After spending five years in secondary school, I get a high school diploma that allows me to enroll at any university in Costa Rica.'
-        }
+            'title': t('ljm'),
+            'timeframe': t('ljmTime'),
+            'subtitle': t('ljmMajor'),
+            'description': t('ljmDescription')
+        },
     ];
     const experienceItems = [
         {
-            'title': 'Knogin S.A.',
-            'timeframe': 'July 2020 - December 2020',
-            'subtitle': 'Internship as Software Developer',
-            'description': <>As part of my degree, I have to acquire experience through an internship. I had the opportunity to work as an intern at <a href='https://www.knogin.com/' target='__blank' className='item__link'>Knogin</a>, where I participated in multiple projects as a full-stack software developer at the Development Department.</>
+            'title': t('kg'),
+            'timeframe': t('kgTime'),
+            'subtitle': t('kgExperience'),
+            'description': <> {t('kgDescription1')} <a href='https://www.knogin.com/' target='__blank' className='item__link'>{t('knogin')}</a>, {t('kgDescription2')}</>
         }
     ]
     const skillItems = [
         {
-            'skill': 'Programming languages',
+            'skill': t('pl'),
             'items': ['C#', 'JavaScript', 'Java', 'PHP', 'Python']
         },
         {
-            'skill': 'Frameworks',
+            'skill': t('fw'),
             'items': ['React.js', 'ASP.NET Core', 'Node.js', 'Express']
         },
         {
-            'skill': 'DB Management Systems',
+            'skill': t('db'),
             'items': ['MySQL', 'Oracle SQL Developer', 'Microsoft SQL Server']
         },
         {
-            'skill': 'Query languages',
+            'skill': t('ql'),
             'items': ['SQL', 'PL/SQL', 'Transact-SQL']
         },
         {
-            'skill': 'Web development',
+            'skill': t('wd'),
             'items': ['HTML', 'CSS', 'SASS', 'Bootstrap', 'Tailwind CSS']
         },
         {
-            'skill': 'Software and tools',
+            'skill': t('swt'),
             'items': ['Git', 'MS Office', 'Latex']
         }
     ];
@@ -53,16 +56,14 @@ export default function Resume() {
     return (
         <div className='wrapper'>
             <article className='resume' id='resume'>
-                <h3 className='title title--mini'>Resumé</h3>
-                <h2 className='title title--big'>More of my credentials.</h2>
-                <p className='paragraph'>
-                    To get a better idea about me, in this section, relevant information about my education, experience, and skills are detailed.
-                </p>
-                <Timeline title='Education' iconClass='fa fa-graduation-cap' timelineItems={educationItems} />
-                <Timeline title='Experience' iconClass='fas fa-business-time' timelineItems={experienceItems} />
+                <h3 className='title title--mini'>{t('sectionName')}</h3>
+                <h2 className='title title--big'>{t('title')}</h2>
+                <p className='paragraph'>{t('description')}</p>
+                <Timeline title={t('educationTitle')} iconClass='fa fa-graduation-cap' timelineItems={educationItems} />
+                <Timeline title={t('experienceTitle')} iconClass='fas fa-business-time' timelineItems={experienceItems} />
                 <section className='resume-skillsSection'>
                     <div className='wrapper--title wrapper--title--center'>
-                        <h3 className='title title--sub'>Skills</h3>
+                        <h3 className='title title--sub'>{t('skillsTitle')}</h3>
                     </div>
                     <div className='resume-skillsWrapper'>
                         <SkillSet skillItems={skillItems} />

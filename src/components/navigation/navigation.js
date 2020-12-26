@@ -2,29 +2,31 @@ import React, { useState } from 'react';
 import { Burger } from './burger';
 import { Menu } from '../menu/menu';
 import { Link } from 'react-scroll';
+import { useTranslation } from 'react-i18next';
 
 export default function Navigation() {
+    const { t } = useTranslation('navigation');
     const [openMenu, setOpenMenu] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
     const navItems = [
         {
-            name: 'Home',
+            name: t('home'),
             link: 'home',
         },
         {
-            name: 'About me',
+            name: t('about'),
             link: 'about',
         },
         {
-            name: 'Resumé',
+            name: t('resume'),
             link: 'resume',
         },
         {
-            name: 'Projects',
+            name: t('projects'),
             link: 'projects',
         },
         {
-            name: 'Contact me',
+            name: t('contact'),
             link: 'contact',
         }
     ];
