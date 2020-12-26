@@ -2,9 +2,9 @@ export function Gallery({ galleryItems }) {
     return (
         <div className='gallery'>
             {
-                galleryItems.map(item => {
+                galleryItems.map((item, index) => {
                     return (
-                        <div className='card'>
+                        <div className='card' key={index.toString()}>
                             <a href={item.link} target='__blank' className='card__img' >
                                 <img src={item.img} alt={item.title} />
                             </a>

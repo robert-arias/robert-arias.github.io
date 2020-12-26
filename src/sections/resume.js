@@ -77,9 +77,9 @@ export default function Resume() {
 function SkillSet({ skillItems}) {
     return <>
             {
-                skillItems.map(skill => {
+                skillItems.map((skill, index) => {
                     return (
-                        <div className='resume-skills'>
+                        <div className='resume-skills' key={index.toString()}>
                             <h4 className='skills__title'>{skill.skill}</h4>
                             <ul className='skills__list'>
                                 {

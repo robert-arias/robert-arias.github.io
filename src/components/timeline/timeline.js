@@ -14,9 +14,9 @@ export function Timeline({ title, timelineItems, iconClass }) {
 function TimelineItem({ timelineItems, iconClass }) {
     return <>
         {
-            timelineItems.map(item => {
+            timelineItems.map((item, index) => {
                 return (
-                    <div className='timeline__item'>
+                    <div className='timeline__item' key={index.toString()}>
                         <div className='item__icon'>
                             <i className={iconClass}></i>
                         </div>
