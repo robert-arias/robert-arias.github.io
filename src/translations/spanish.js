@@ -47,7 +47,7 @@ const spanish = {
         'kg': 'Knogin S.A.',
         'kgTime': 'July 2020 - December 2020',
         'kgExperience': 'Pasantía como Desarrollador de Software',
-        'kgDescription1': 'Como parte de la carrera en informática, tengo que adquirir experiencia a través de una pasantía. Tuve la oportunidad de trabajar como interno en',
+        'kgDescription1': 'Como parte de la carrera en informática, tengo que adquirir experiencia a través de una pasantía. Tuve la oportunidad de trabajar como practicante en',
         'knogin': 'Knogin',
         'kgDescription2': 'donde participé en múltiples proyectos como desarrollador de software full-stack en el Departamento de Desarrollo.',
         'skillsTitle': 'Habilidades',
