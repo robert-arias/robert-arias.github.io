@@ -19,7 +19,7 @@
   },
   "scripts": {
     "scss": "node-sass --watch src/scss -o src/css --output-style compressed",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && echo robertarias.io > ./build/CNAME",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
