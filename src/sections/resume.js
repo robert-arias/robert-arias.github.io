@@ -48,7 +48,7 @@ export default function Resume() {
             'items': ['HTML', 'CSS', 'SASS', 'Bootstrap', 'Tailwind CSS']
         },
         {
-            'skill': t('swt'),
+            'skill': t('sft'),
             'items': ['Git', 'MS Office', 'Latex']
         }
     ];
