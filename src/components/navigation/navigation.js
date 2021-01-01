@@ -12,22 +12,27 @@ export default function Navigation() {
         {
             name: t('home'),
             link: 'home',
+            offset: -76
         },
         {
             name: t('about'),
             link: 'about',
+            offset: -70
         },
         {
             name: t('resume'),
             link: 'resume',
+            offset: -65
         },
         {
             name: t('projects'),
             link: 'projects',
+            offset: -65
         },
         {
             name: t('contact'),
             link: 'contact',
+            offset: -65
         }
     ];
 
@@ -63,7 +68,7 @@ function NavItems({ items, classBlock, changeMenu = null }) {
                 items.map((item, index) => {
                     return (
                         <li key={index.toString()} className={`${classBlock}__item`}>
-                            <Link className={`${classBlock}__link`} activeClass={selectedClass} to={item.link} spy={true} smooth={true} offset={item.link === 'home' ? -76 : -70} duration={500} onClick={changeMenu ? () => changeMenu() : null} >{item.name}</Link>
+                            <Link className={`${classBlock}__link`} activeClass={selectedClass} to={item.link} spy={true} smooth={true} offset={item.offset} duration={500} onClick={changeMenu ? () => changeMenu() : null} >{item.name}</Link>
                         </li>
                     )
                 })
