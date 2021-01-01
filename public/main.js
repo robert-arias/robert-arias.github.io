@@ -1,3 +1,3 @@
 //reveal animation
-const sr = ScrollReveal();
-sr.reveal('.wrapper', { duration: 2000 });
+const sr = ScrollReveal({ reset: true });
+sr.reveal('.wrapper', { duration: 1500 });
