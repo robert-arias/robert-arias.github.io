@@ -30,7 +30,7 @@ const english = {
         'btnCV': 'Download CV'
     },
     'resume': {
-        'sectionName': 'About me',
+        'sectionName': 'Resumé',
         'title': 'More of my credentials.',
         'description': 'To get a better idea about me, in this section, relevant information about my education, experience, and skills are detailed.',
         'educationTitle': 'Education',
