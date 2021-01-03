@@ -59,7 +59,7 @@ const spanish = {
         'sft': 'Software y herramientas'
     },
     'projects': {
-        'sectionName': 'Proyecto',
+        'sectionName': 'Proyectos',
         'title': 'Ve algunos de mis trabajos.',
         'description1': 'Estos son algunos de los proyectos más memorables que he realizado, principalmente durante mi tiempo en la universidad. Están alojados en mi',
         'gh': 'repositorio de GitHub.',
