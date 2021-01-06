@@ -63,7 +63,7 @@ const english = {
         'title': 'Check out some of my work.',
         'description1': 'These are some of the most memorable projects I\'ve made, mostly in my time in college. They are hosted on my',
         'gh': 'GitHub repository.',
-        'description2': 'Check them out.',
+        'description2': 'Check them out. By the way, this portfolio is a project itself! What better way to check some of my projects?',
         'ng': 'Nail Garden',
         'ngDescription': 'Multimedia course',
         'mc': 'MultiCare System',
