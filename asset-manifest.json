@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.ed3f96e7.chunk.css",
-    "main.js": "/static/js/main.3ebb2449.chunk.js",
-    "main.js.map": "/static/js/main.3ebb2449.chunk.js.map",
+    "main.js": "/static/js/main.5dea0ef1.chunk.js",
+    "main.js.map": "/static/js/main.5dea0ef1.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.2fd7dc15.js",
     "runtime-main.js.map": "/static/js/runtime-main.2fd7dc15.js.map",
     "static/js/2.e67e87ae.chunk.js": "/static/js/2.e67e87ae.chunk.js",
@@ -15,8 +15,8 @@
     "static/media/farmacia-rosales.2d1f56e7.jpg": "/static/media/farmacia-rosales.2d1f56e7.jpg",
     "static/media/landing.ddb40a0f.svg": "/static/media/landing.ddb40a0f.svg",
     "static/media/nail-garden.4076f79b.jpg": "/static/media/nail-garden.4076f79b.jpg",
-    "static/media/robert-cv-en.e46ea270.pdf": "/static/media/robert-cv-en.e46ea270.pdf",
-    "static/media/robert-cv-es.bfa127e6.pdf": "/static/media/robert-cv-es.bfa127e6.pdf",
+    "static/media/robert-cv-en.d1aa14ab.pdf": "/static/media/robert-cv-en.d1aa14ab.pdf",
+    "static/media/robert-cv-es.aeb5c25d.pdf": "/static/media/robert-cv-es.aeb5c25d.pdf",
     "static/media/sistema-multicare.a719da76.jpg": "/static/media/sistema-multicare.a719da76.jpg",
     "static/media/spinner.b7636d8e.svg": "/static/media/spinner.b7636d8e.svg"
   },
@@ -24,6 +24,6 @@
     "static/js/runtime-main.2fd7dc15.js",
     "static/js/2.e67e87ae.chunk.js",
     "static/css/main.ed3f96e7.chunk.css",
-    "static/js/main.3ebb2449.chunk.js"
+    "static/js/main.5dea0ef1.chunk.js"
   ]
 }
