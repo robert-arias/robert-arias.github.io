@@ -24,6 +24,12 @@ export default function Resume() {
             'timeframe': t('kgTime'),
             'subtitle': t('kgExperience'),
             'description': <> {t('kgDescription1')} <a href='https://www.knogin.com/' target='__blank' className='item__link'>{t('knogin')}</a>, {t('kgDescription2')}</>
+        },
+        {
+            'title': t('kg'),
+            'timeframe': t('kgTime2'),
+            'subtitle': t('kgExperience2'),
+            'description': t('kgDescription02')
         }
     ]
     const skillItems = [
