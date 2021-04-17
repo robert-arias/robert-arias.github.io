@@ -9,12 +9,12 @@
         &__list {
             list-style: none;
         }
-    
+
         &__item {
             margin-bottom: 20px;
             line-height: 18px;
         }
-    
+
         &__strong {
             font-weight: 600;
             text-transform: uppercase;
@@ -79,13 +79,14 @@
         &-buttons {
             flex-direction: row;
             justify-content: space-between;
-            
+
             & > * {
-                width: 47.5%;
+                width: 100%;
             }
 
             & > *:not(:last-child) {
                 margin-bottom: 0;
+                margin-right: 15px;
             }
         }
     }
