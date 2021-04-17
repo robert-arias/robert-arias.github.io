@@ -54,7 +54,7 @@ export default function Navigation() {
         <nav className='nav'>
             <Burger type='button' onClick={() => changeMenu()} />
             <NavItems items={navItems} classBlock='nav' />
-            { openMenu ? (<Menu items={navItems} changeMenu={changeMenu} NavItems={NavItems} isClosing={isClosing} />) : null }
+            { openMenu && <Menu items={navItems} changeMenu={changeMenu} NavItems={NavItems} isClosing={isClosing} /> }
         </nav>
     );
 }

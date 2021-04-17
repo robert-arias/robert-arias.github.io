@@ -4,7 +4,7 @@ export function MainButton({ link_to, title, img = null }) {
     return (
         <Link to={link_to} className={`btn ${img ? `btn--main-icon` : `btn--main`}`} smooth={true} duration={500} >
             <span>{title}</span>
-            {img ? <img className='btn__icon' src={img} alt={title} /> : null}
+            { img && <img className='btn__icon' src={img} alt={title} /> }
         </Link>
     );
 }

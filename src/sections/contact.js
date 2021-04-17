@@ -25,15 +25,15 @@ export default function Contact() {
 
         if(!fullName || fullName.trim().length === 0)
             messages.push(t('messages:efn'));
-        
+
         if(!email || email.trim().length === 0)
             messages.push(t('messages:eem'));
         else if(!emailValidation(email))
             messages.push(t('messages:eei'));
-        
+
         if (!subject || subject.trim().length === 0)
             messages.push(t('messages:esj'));
-        
+
         if (!message || message.trim().length === 0)
             messages.push(t('messages:ems'));
 
@@ -100,10 +100,10 @@ export default function Contact() {
                         <label className='form__label form__label--message' htmlFor='message'>{t('contact:ms')}</label>
                     </div>
                     {
-                        alertMessages.length > 0 ? <Alerts messages={alertMessages} hideAlert={hideAlert} /> : null
+                        alertMessages.length > 0 && <Alerts messages={alertMessages} hideAlert={hideAlert} />
                     }
                     {
-                        !isLoading ? <FormButton buttonName='Submit' /> : 
+                        !isLoading ? <FormButton buttonName='Submit' /> :
                         (<div className='form-loadingWrapper'>
                             <img className='form__spinner' src={Spinner} alt='Loading animation' />
                         </div>)
