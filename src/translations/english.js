@@ -26,7 +26,7 @@ const english = {
         'emailTitle': 'Email',
         'skillsTitle': 'Skills',
         'skillsDescription': 'Throughout my major, as well as on a personal level, I have learned the necessary skills for creating software. Some of them are:',
-        'btnHire': 'Hire me',
+        'btnHire': 'Contact me',
         'btnCV': 'Download CV'
     },
     'resume': {

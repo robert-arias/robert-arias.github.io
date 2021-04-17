@@ -26,7 +26,7 @@ const spanish = {
         'emailTitle': 'Correo',
         'skillsTitle': 'Habilidades',
         'skillsDescription': 'A lo largo de mi carrera, así como a nivel personal, he aprendido diferentes habilidades necesarias para crear programas. Algunos de ellos son:',
-        'btnHire': 'Contratame',
+        'btnHire': 'Contactame',
         'btnCV': 'Descargar CV'
     },
     'resume': {
