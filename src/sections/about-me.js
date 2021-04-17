@@ -2,9 +2,11 @@ import { MainButton, SecondaryButton } from '../components/buttons/buttons';
 import CVen from '../cv/robert-cv-en.pdf';
 import CVes from '../cv/robert-cv-es.pdf';
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 
 export default function AboutMe() {
 	const { t, i18n } = useTranslation('about');
+    const [isHireable] = useState(false);
 
     const ProfItems = [
         {
@@ -74,7 +76,9 @@ export default function AboutMe() {
                 </section>
                 <div className='about-buttons'>
                     <MainButton link_to='contact' title={t('btnHire')} />
-                    <SecondaryButton link_to={ i18n.language.startsWith('es') ? CVes : CVen} title={t('btnCV')} isTarget='__blank' />
+                    { isHireable &&
+                      <SecondaryButton link_to={ i18n.language.startsWith('es') ? CVes : CVen} title={t('btnCV')} isTarget='__blank' />
+                    }
                 </div>
             </article>
         </div>
