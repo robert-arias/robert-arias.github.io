@@ -8,8 +8,8 @@
     width: 100%;
     height: auto;
     overflow: hidden;
+    border: 1px solid $grey-terciary;
     border-radius: $default-radius;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -1px rgba(0,0,0,.06), 0 0 0 1px rgba(0,0,0,.05);
 
     &__info {
         padding: 15px;
@@ -63,8 +63,8 @@
 @media screen and (min-width: 1024px) {
     .card {
         border-radius: 0;
-        box-shadow: none;
         position: relative;
+        border: none;
 
         &__img {
             position: relative;
